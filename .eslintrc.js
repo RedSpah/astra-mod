@@ -15,6 +15,8 @@ module.exports = {
   },
 
   rules: {
+    "max-classes-per-file": ["error", 2],
+    "no-nested-ternary": "off",
     // Insert changed or disabled rules here, if necessary.
   },
 };
