@@ -1,0 +1,81 @@
+regular:
+ - co-op baby x3 (Mom's Heart, Mega Satan, all Hard Mode)
+ - item x8 (Isaac, ???, Boss Rush, Hush, Ultra Greed, Mother, Beast, Delirium)
+ - trinket x3 (Satan, Lamb, Ultra Greedier)
+ 
+tainted:
+ - trinket x2 (Isaac + ??? + Satan + Lamb, Mother)
+ - soul x1 (Boss Rush + Hush)
+ - card x1 (ultra greedier)
+ - anything goes x1 (mega satan) (item)
+ - item x2 (Delirium, the Beast)
+ 
+ 
+-------
+
+=== Coop babies:
+- Mom's Heart:		Moon Baby (Ralts baby, Spoon Bender effect)
+- Mega Satan:		Hatenna baby (Shy Baby, Staying away from enemies gives extra damage)
+- All Hard Mode:	Wynaut baby (Counter Baby, Varicose Veins effect)
+
+=== Trinkets: 
+== Astra
+- Satan: 			Cleanse Tag (10% chance to despawn any non-boss enemy at the start of the room) 
+					"Repels wild creatures"
+
+- Lamb:				Soothe Bell (if not at full health, any consumable being spawned has a 8% chance to spawn a heart along it) 
+					"The chime comforts you" 
+					
+- Ultra Greedier: 	Resolve of Purity (spawned/granted/current black hearts are turned into 2 soul hearts each) 
+					"Let your soul not be swayed"
+
+== Tainted Astra
+- Four Bosses:		Air Balloon (grants Flying, disappears when hit) 					
+					"Don't get hit" 
+					
+- Mother:			Choice Scarf (speed up, doesn't come off, auto drops at the beginning of the next floor) 
+					"You feel fixated"
+
+=== Soul:
+- Rush + Hush:		Soul of Astra (mega mush effect when used)
+					"Something Mega"
+
+=== Card:
+- Ultra Greedier:	Professor's Research (empties your trinket / pocket consumables, spawns seven random ones) 
+					"Discard your hand and draw 7"
+
+=== Items:
+== Astra
+- Delirium:			Confusion (charged aoe blast + enemy slowdown)
+					"Brainpower!"
+
+- Boss Rush:		Blink (teleport around the room)
+					"Once here, once there"
+
+- Isaac:			Telekinesis (passive effect, every few seconds a nearby enemy is picked into air and thrown away, dealing damage to it)
+					"Stay back!"
+				
+- ???:				Future Sight (delayed Doom Desire explosion on where you stood)
+					"Delayed blast"
+
+- Hush:				Triple Axel (burst of freezing tears)
+					"Your legs are too short for this"
+					
+- Mother: 			Wish (full heal + overheal on start of next floor)
+					"Hold on for a bit longer"
+
+- Ultra Greed:		Hypno's Pendulum (familiar that you can swing with your body, confuses enemies near it)
+					"Also effective as a bludgeon"
+
+- The Beast:		Witch's Braids (Hatterene hair familiar that automatically attacks in melee around the user)
+					"Bloodless, and yet still full of hatred"
+
+== Tainted Astra
+- Delirium:			Doom Desire (Epic Fetus style tear explosion)
+					"Wish of Destruction"
+
+- The Beast:		Latias Mask (speed up, invisibility and flight when entering new room until attacking)
+					"Torn off of its previous user"
+
+- Mega Satan:		Heart Fins (shot speed down, damage up, tears deal damage to enemies when passing by them)
+					"Painful to be near"

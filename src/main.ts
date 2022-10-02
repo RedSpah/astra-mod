@@ -9,7 +9,7 @@ const MOD_NAME = "astra";
 
 main();
 
-function main() {
+export function main(): void {
   // Instantiate a new mod object, which grants the ability to add callback functions that
   // correspond to in-game events.
   const modVanilla = RegisterMod(MOD_NAME, 1);
