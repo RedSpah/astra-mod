@@ -1,3 +1,3 @@
 export const Constants = {
-  SHINY_ODDS: 64,
+  SHINY_ODDS: 64
 } as const;

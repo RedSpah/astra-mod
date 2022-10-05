@@ -10,5 +10,5 @@ export const AstraBStats = {
   LUCK: -1,
   FLYING: false,
   TEAR_FLAG: TearFlag.NORMAL,
-  TEAR_COLOR: Color(1.0, 0.75, 0.75, 1.0, 0.25, 0.05, 0.05),
+  TEAR_COLOR: Color(1.0, 0.75, 0.75, 1.0, 0.25, 0.05, 0.05)
 } as const;

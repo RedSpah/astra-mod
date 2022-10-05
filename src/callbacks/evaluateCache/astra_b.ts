@@ -2,10 +2,7 @@ import { CacheFlag } from "isaac-typescript-definitions";
 import { addFlag } from "isaacscript-common";
 import { AstraBStats } from "../../enums/AstraBStats";
 
-export function evaluateCacheAstraB(
-  player: EntityPlayer,
-  cacheFlag: CacheFlag,
-): void {
+export function evaluateCacheAstraB(player: EntityPlayer, cacheFlag: CacheFlag): void {
   switch (cacheFlag) {
     case CacheFlag.DAMAGE:
       player.Damage *= AstraBStats.DAMAGE;

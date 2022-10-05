@@ -10,9 +10,5 @@ export function initAstraB(player: EntityPlayer, shiny: boolean): void {
   }
 
   player.AddCollectible(Collectibles.DOOM_DESIRE, 0, false);
-  player.SetPocketActiveItem(
-    Collectibles.FRUSTRATION,
-    ActiveSlot.POCKET,
-    false,
-  );
+  player.SetPocketActiveItem(Collectibles.FRUSTRATION, ActiveSlot.POCKET, false);
 }
