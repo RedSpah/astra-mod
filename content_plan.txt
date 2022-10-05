@@ -15,8 +15,8 @@ tainted:
 
 === Coop babies:
 - Mom's Heart:		Moon Baby (Ralts baby, Spoon Bender effect)
-- Mega Satan:		Hatenna baby (Shy Baby, Staying away from enemies gives extra damage)
-- All Hard Mode:	Wynaut baby (Counter Baby, Varicose Veins effect)
+- Mega Satan:		Shy Baby (Hatenna Baby, Staying away from enemies gives extra damage)
+- All Hard Mode:	Counter Baby (Wynaut Baby, Varicose Veins effect)
 
 === Trinkets: 
 == Astra
@@ -46,13 +46,13 @@ tainted:
 
 === Items:
 == Astra
-- Delirium:			Confusion (charged aoe blast + enemy slowdown)
+- Delirium:			Confusion (charged aoe blast + enemy slowdown, Astra's starting item)
 					"Brainpower!"
 
-- Boss Rush:		Blink (teleport around the room)
+- Boss Rush:		Blink (teleport around the room, Astra's starting item)
 					"Once here, once there"
 
-- Isaac:			Telekinesis (passive effect, every few seconds a nearby enemy is picked into air and thrown away, dealing damage to it)
+- Isaac:			Psychic (passive effect, every few seconds a nearby enemy is picked into air and thrown away, dealing damage to it)
 					"Stay back!"
 				
 - ???:				Future Sight (delayed Doom Desire explosion on where you stood)
@@ -64,18 +64,77 @@ tainted:
 - Mother: 			Wish (full heal + overheal on start of next floor)
 					"Hold on for a bit longer"
 
-- Ultra Greed:		Hypno's Pendulum (familiar that you can swing with your body, confuses enemies near it)
-					"Also effective as a bludgeon"
+- Ultra Greed:		Tapu's Fin (chance to fire a Moonblast tear that zaps everything in the room and focuses on bosses)
+					"Goes well with Primeape"
 
 - The Beast:		Witch's Braids (Hatterene hair familiar that automatically attacks in melee around the user)
 					"Bloodless, and yet still full of hatred"
 
 == Tainted Astra
-- Delirium:			Doom Desire (Epic Fetus style tear explosion)
+- Delirium:			Doom Desire (Epic Fetus style tear explosion, TAstra's starting item)
 					"Wish of Destruction"
 
-- The Beast:		Latias Mask (speed up, invisibility and flight when entering new room until attacking)
-					"Torn off of its previous user"
+- The Beast:		Latias' Mask (speed up, invisibility and flight when entering new room until attacking)
+					"Torn off of its previous owner"
 
-- Mega Satan:		Heart Fins (shot speed down, damage up, tears deal damage to enemies when passing by them)
+- Mega Satan:		Heart Fin (shot speed down, damage up, tears deal damage to enemies when passing by them)
 					"Painful to be near"
+					
+- Other:			Frustration (teleports to a random spot in the room, TAstra's starting item, not unlockable)
+					"Powerless, aimless"
+					
+					
+					
+==== Checklist:
+=== Item Sprites:
+* [x] Confusion
+* [x] Blink 
+* [x] Doom Desire
+* [x] Frustration
+* [x] Latias Mask
+* [x] Heart Fin
+* [x] Tapu's Fin
+* [x] Witch's Braids
+* [] Wish
+* [] Psychic
+* [] Future Sight
+* [] Triple Axel
+* [] Cleanse Tag
+* [] Soothe Bell
+* [] Resolve of Purity
+* [] Air Balloon 
+* [] Choice Scarf
+* [] Professor's Research
+* [] Soul of Astra
+=== Other Sprites:
+* [] Unlock Screens
+* [] Item inventory sprites
+* [] Babies
+* [] Item costumes for the remaining items
+* [] Assorted sprites for the items
+* [] Costumes for missing Repentance items
+* [] Shiny Costumes in case I want to kashoot myself
+=== Coding Items:
+* [x] Confusion Rework (ETA: Medium)
+* [] Blink Polish (ETA: Low)
+* [] Doom Desire Rework (ETA: High)
+* [] Frustration Polish (ETA: Low)
+* [] Cleanse Tag (ETA: Low)
+* [] Soothe Bell (ETA: Very Low)
+* [] Resolve of Purity (ETA: Low)
+* [] Air Balloon (ETA: Low)
+* [] Choice Scarf (ETA: Low)
+* [] Soul of Astra (ETA: Very Low)
+* [] Professor's Research (ETA: Low)
+* [] Psychic (ETA: High)
+* [] Future Sight (ETA: Low)
+* [] Triple Axel (ETA: Low)
+* [] Tapu's Fin (ETA: Medium)
+* [] Witch's Braids (ETA: Very High)
+* [] Latias' Mask (ETA: Medium)
+* [] Heart Fin (ETA: Medium)
+=== Other Coding:
+* [] Astra Purity Polish (ETA: Low)
+* [] TAstra Heartbroken Polish / Rework (ETA: Medium)
+* [] Wiring Unlocks together (ETA: Medium)
+* [] Cross-mod compatibility, Pog, Ugh, EID, Encyclopedia, Rune thing in community pack (ETA: High)

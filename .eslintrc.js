@@ -4,19 +4,20 @@ module.exports = {
   extends: [
     // The linter base is the IsaacScript mod config:
     // https://github.com/IsaacScript/isaacscript/blob/main/packages/eslint-config-isaacscript/mod.js
-    "eslint-config-isaacscript/mod",
+    "eslint-config-isaacscript/mod"
   ],
 
   parserOptions: {
     // ESLint needs to know about the project's TypeScript settings in order for TypeScript-specific
     // things to lint correctly. We do not point this at "./tsconfig.json" because certain files
     // (such at this file) should be linted but not included in the actual project output.
-    project: "./tsconfig.eslint.json",
+    project: "./tsconfig.eslint.json"
   },
 
   rules: {
     "max-classes-per-file": ["error", 2],
     "no-nested-ternary": "off",
+    "isaacscript/complete-sentences-line-comments": "off"
     // Insert changed or disabled rules here, if necessary.
-  },
+  }
 };

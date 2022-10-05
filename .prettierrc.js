@@ -11,10 +11,11 @@ module.exports = {
   // https://medium.com/@nikgraf/why-you-should-enforce-dangling-commas-for-multiline-statements-d034c98e36f8
   // Prettier will change the default in the future:
   // https://github.com/prettier/prettier/issues/9369
-  trailingComma: "all",
+  trailingComma: "none",
 
   // https://github.com/prettier/plugin-xml#configuration
   // The default is "struct"
   // However, whitespace cannot be reformatted unless this is set to "ignore"
   xmlWhitespaceSensitivity: "ignore",
+  printWidth: 200,
 };
