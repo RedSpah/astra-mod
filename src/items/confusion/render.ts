@@ -11,7 +11,7 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
     // Variables
 
     const conf = getOrDefault(saved.run.conf, playerHash, ConfusionData);
-    const local = getOrDefault(locals, playerHash, ConfusionVolatileData, player);
+    const local = getOrDefault(locals, playerHash, ConfusionVolatileData);
 
     if (conf.ChargeProgress > 0 && !Game().IsPaused()) {
       // Variables
@@ -41,8 +41,9 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
       local.ChargeSprite.Update();
 
       // Inner VFX
-      local.refreshRepel(player);
+      local.refreshRepel();
       if (local.RepelEffect !== undefined) {
+        local.RepelEffect.FollowParent(player);
         local.RepelEffect.Visible = true;
         if (conf.DischargeExplosion) {
           local.RepelEffect.SpriteScale = Vector(
@@ -61,7 +62,7 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
       }
 
       // Wisp Ring
-      local.refreshWisps(player);
+      local.refreshWisps();
       const Wisp = local.OuterWisp;
       if (Wisp !== undefined) {
         const C = Constants.OuterWispColor;

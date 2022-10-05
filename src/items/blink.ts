@@ -14,11 +14,11 @@ const Constants = {
 export class BlinkVolatileData {
   AimReticule: EntityEffect | undefined;
 
-  constructor(player: EntityPlayer) {
-    // his.refreshReticule(player);
+  constructor() {
+    this.refreshReticule();
   }
 
-  public refreshReticule(player: EntityPlayer): void {
+  public refreshReticule(): void {
     if (this.AimReticule === undefined || this.AimReticule.IsDead()) {
       if (this.AimReticule !== undefined) {
         this.AimReticule.Remove();
@@ -42,8 +42,6 @@ export class BlinkData {
   Slot = ActiveSlot.PRIMARY;
   TPDownFrame = 0;
   ButtonLock = false;
-
-  constructor() {}
 }
 
 export const locals: Map<PtrHash, BlinkVolatileData> = new Map<PtrHash, BlinkVolatileData>();
@@ -66,7 +64,7 @@ function BlinkProcess(player: EntityPlayer) {
   const playerHash = GetPtrHash(player);
 
   const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
-  const local = getOrDefault(locals, playerHash, BlinkVolatileData, player);
+  const local = getOrDefault(locals, playerHash, BlinkVolatileData);
 
   if (blink.InUse) {
     // Resetting the charge in case you get damaged out of using Blink
@@ -75,7 +73,7 @@ function BlinkProcess(player: EntityPlayer) {
       player.SetActiveCharge(Constants.BlinkCD, blink.Slot);
     }
 
-    local.refreshReticule(player);
+    local.refreshReticule();
     if (local.AimReticule !== undefined) {
       local.AimReticule.Visible = true;
       let MoveVec = Vector(0, 0);
@@ -136,10 +134,10 @@ function BlinkUse(_: CollectibleType, __: RNG, player: EntityPlayer, useFlags: B
   if (!hasFlag(useFlags, UseFlag.MIMIC, UseFlag.CAR_BATTERY, UseFlag.VOID)) {
     const playerHash = GetPtrHash(player);
     const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
-    const local = getOrDefault(locals, playerHash, BlinkVolatileData, player);
+    const local = getOrDefault(locals, playerHash, BlinkVolatileData);
 
     if (!blink.InUse && blink.TPDelay === -1) {
-      local.refreshReticule(player);
+      local.refreshReticule();
       if (local.AimReticule !== undefined) {
         local.AimReticule.Position = player.Position;
         local.AimReticule.Visible = true;
@@ -156,7 +154,7 @@ function BlinkUse(_: CollectibleType, __: RNG, player: EntityPlayer, useFlags: B
 }
 
 // Input blocking used to prevent using other items while using Blink
-function BlinkUseInputBlock(entity: Entity | undefined, ihook: InputHook, button: ButtonAction): boolean | undefined {
+function BlinkUseInputBlock(entity: Entity | undefined, _: InputHook, button: ButtonAction): boolean | undefined {
   if (entity !== undefined && entity.Type === EntityType.PLAYER) {
     const player = entity.ToPlayer();
     if (player !== undefined) {

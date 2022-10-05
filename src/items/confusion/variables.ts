@@ -13,7 +13,7 @@ export class ConfusionVolatileData {
   EyesAnim = 0;
   EyesAnimPrev = 0;
 
-  constructor(player: EntityPlayer) {
+  constructor() {
     const rng = RNG();
     rng.SetSeed(getRandomSeed(), 35);
     this.ChargeSprite = Sprite();
@@ -33,43 +33,41 @@ export class ConfusionVolatileData {
       } else {
         const RandFactor = 0; // rng.RandomFloat() ** 4;
 
-        const SwirlFactor = 1 - (i % (Constants.WispsNum / 4)) / (Constants.WispsNum / 4);
+        // const SwirlFactor = 1 - (i % (Constants.WispsNum / 4)) / (Constants.WispsNum / 4);
 
         this.OuterWispDistOffsets.push(RandFactor);
       }
     }
 
-    this.refreshWisps(player);
-    this.refreshRepel(player);
+    this.refreshWisps();
+    this.refreshRepel();
   }
 
-  public refreshRepel(player: EntityPlayer): void {
+  public refreshRepel(): void {
     if (this.RepelEffect === undefined || this.RepelEffect.IsDead()) {
       if (this.RepelEffect !== undefined) {
         this.RepelEffect.Remove();
       }
 
-      this.RepelEffect = spawn(EntityType.EFFECT, EffectVariant.PULLING_EFFECT, 0, player.Position, Vector(0, 0), player).ToEffect();
+      this.RepelEffect = spawn(EntityType.EFFECT, EffectVariant.PULLING_EFFECT, 0, Vector(-100, -100)).ToEffect();
       if (this.RepelEffect !== undefined) {
         this.RepelEffect.SetTimeout(Constants.Infinity);
         this.RepelEffect.SetColor(Constants.RepelColor, Constants.Infinity, Constants.EffectColorPriority);
-        this.RepelEffect.FollowParent(player);
         this.RepelEffect.Visible = false;
       }
     }
   }
 
-  public refreshWisps(player: EntityPlayer): void {
+  public refreshWisps(): void {
     if (this.OuterWisp === undefined || this.OuterWisp.IsDead()) {
       if (this.OuterWisp !== undefined) {
         this.OuterWisp.Remove();
       }
 
-      this.OuterWisp = spawn(EntityType.EFFECT, EffectVariant.ENEMY_SOUL, 0, player.Position, Vector(0, 0), player).ToEffect();
+      this.OuterWisp = spawn(EntityType.EFFECT, EffectVariant.ENEMY_SOUL, 0, Vector(-100, -100)).ToEffect();
 
       if (this.OuterWisp !== undefined) {
         this.OuterWisp.Visible = false;
-        this.OuterWisp.FollowParent(player);
         this.OuterWisp.SpriteScale = Vector(0.75, 0.75);
       }
     }
@@ -88,8 +86,6 @@ export class ConfusionData {
   DischargeTopCharge = 0;
   OuterRange = 0;
   InnerRange = 0;
-
-  constructor() {}
 }
 
 export const locals: Map<PtrHash, ConfusionVolatileData> = new Map<PtrHash, ConfusionVolatileData>();

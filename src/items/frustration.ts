@@ -11,8 +11,6 @@ const Constants = {
 
 export class FrustrationData {
   TPDelay = -1;
-
-  constructor() {}
 }
 
 export const saved = {
