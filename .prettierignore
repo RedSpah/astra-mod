@@ -3,3 +3,4 @@ mod/content/rooms/**/*.xml
 mod/content/luarooms/**/*.xml
 mod/resources/rooms/**/*.xml
 mod/resources/luarooms/**/*.xml
+*.xml
