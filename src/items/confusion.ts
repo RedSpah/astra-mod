@@ -1,9 +1,5 @@
 import { CacheFlag, ModCallback } from "isaac-typescript-definitions";
-import {
-  ModUpgraded,
-  saveDataManager,
-  saveDataManagerRegisterClass,
-} from "isaacscript-common";
+import { ModUpgraded, saveDataManager, saveDataManagerRegisterClass } from "isaacscript-common";
 
 import { ConfusionCharge } from "./confusion/charge";
 import { ConfusionRender } from "./confusion/render";
@@ -15,9 +11,5 @@ export function confusionInit(_: ModUpgraded, modVanilla: Mod): void {
   saveDataManagerRegisterClass(ConfusionData);
   modVanilla.AddCallback(ModCallback.POST_PEFFECT_UPDATE, ConfusionCharge);
   modVanilla.AddCallback(ModCallback.POST_PLAYER_RENDER, ConfusionRender);
-  modVanilla.AddCallback(
-    ModCallback.EVALUATE_CACHE,
-    ConfusionTearSlowdown,
-    CacheFlag.FIRE_DELAY,
-  );
+  modVanilla.AddCallback(ModCallback.EVALUATE_CACHE, ConfusionTearSlowdown, CacheFlag.FIRE_DELAY);
 }
