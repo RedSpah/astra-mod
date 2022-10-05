@@ -1,0 +1,27 @@
+<costumes anm2root="gfx/characters/">
+	<costume anm2path="character_red001_astrahead.anm2" type="none"  />
+	<costume anm2path="character_red001x_tastrahead.anm2" type="none"  />
+	<costume anm2path="character_red001_astrasidehair.anm2" type="none"  />
+	<costume anm2path="character_red001x_tastrasidehair.anm2" type="none" />
+	<costume anm2path="character_red001_astrahorns.anm2" type="none"  />
+	<costume anm2path="character_red001x_tastrahorns.anm2" type="none"  />	
+	<costume anm2path="character_red001_astrahairfull.anm2" type="none" priority="99" />
+	<costume anm2path="character_red001x_tastrahairfull.anm2" type="none" priority="99" />
+	<costume anm2path="character_red001_astrahairfull_shiny.anm2" type="none" priority="101" />
+	<costume anm2path="character_red001x_tastrahairfull_shiny.anm2" type="none" priority="101" />
+	<costume anm2path="character_red001_astraheadonelayer.anm2" type="none" priority="99" />
+	<costume anm2path="character_red001x_tastraheadonelayer.anm2" type="none" priority="99" />
+	<costume anm2path="confusion_charge1.anm2" type="none"  />
+	<costume anm2path="confusion_charge2.anm2" type="none"  />
+	<costume anm2path="confusion_charge3.anm2" type="none"  />
+	<costume anm2path="confusion_charge4.anm2" type="none"  />
+	<costume anm2path="confusion_charge5.anm2" type="none"  />
+	<costume anm2path="confusion_charge6.anm2" type="none"  />
+	<costume anm2path="confusion_charge7.anm2" type="none"  />
+	<costume anm2path="confusion_charge8.anm2" type="none"  />	
+	<costume anm2path="costume_astra_devil.anm2" type="none"  />
+	<costume anm2path="costume_astra_cry.anm2" type="none"  />
+	<costume anm2path="costume_astra_cry2.anm2" type="none"  />
+	<costume anm2path="costume_astra_happy.anm2" type="none"  />
+	<costume anm2path="costume_astra_planetarium.anm2" type="none"  />
+</costumes>

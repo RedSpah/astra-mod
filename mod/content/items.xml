@@ -1,0 +1,6 @@
+<items gfxroot="gfx/items/" version="1">
+	<passive cache="firedelay" description="Brainpower!" gfx="Confusion.png" name="Confusion" />
+	<passive cache="" description="Wish of destruction" gfx="Doom Desire.png" name="Doom Desire" />
+	<active cache="" description="Once here, once there" gfx="Blink.png" name="Blink" maxcharges="150" chargetype="timed" />
+	<active cache="" description="Powerless, aimless" gfx="Frustration.png" name="Frustration" maxcharges="60" chargetype="timed"/>
+</items>

@@ -1,0 +1,14 @@
+<ItemPools>
+	<Pool Name="treasure">
+		<Item DecreaseBy="1" Name="Confusion" RemoveOn="0.1" Weight="1"/>
+	</Pool>
+	<Pool Name="shop">
+		<Item DecreaseBy="1" Name="Blink" RemoveOn="0.1" Weight="1"/>
+	</Pool>
+	<Pool Name="angel">
+		<Item DecreaseBy="1" Name="Confusion" RemoveOn="0.1" Weight="1"/>
+	</Pool>
+	<Pool Name="devil">
+		<Item DecreaseBy="1" Name="Doom Desire" RemoveOn="0.1" Weight="0.5"/>
+	</Pool>
+</ItemPools>
