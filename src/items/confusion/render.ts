@@ -86,17 +86,9 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
 
           const FinalDist = CorrectedDist * (1 - WispDist);
 
-          //
-
-          // rintConsole(WispDist.toString()); rintConsole(FinalDist.toString());
-
           let WispOffset = local.OuterWispOffsets[i];
           if (WispOffset === undefined) {
             WispOffset = Vector(0, 0);
-          }
-
-          if (i < 10) {
-            // FinalDist = CorrectedDist; WispOffset = Vector(0, 0);
           }
 
           Wisp.GetSprite().Render(
