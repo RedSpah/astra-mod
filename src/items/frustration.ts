@@ -1,4 +1,4 @@
-import { ActiveSlot, CollectibleType, ModCallback, UseFlag } from "isaac-typescript-definitions";
+import { ActiveSlot, CollectibleType, ModCallback, SoundEffect, UseFlag } from "isaac-typescript-definitions";
 import { hasFlag, ModUpgraded, saveDataManager, saveDataManagerRegisterClass } from "isaacscript-common";
 import { Collectibles } from "../enums/Collectibles";
 import { getOrDefault } from "../helpers";
@@ -31,9 +31,14 @@ function FrustrationProcess(player: EntityPlayer) {
 
   const frust = getOrDefault(saved.run.conf, playerHash, FrustrationData);
 
+  if (frust.TPDelay === 19) {
+    SFXManager().Play(SoundEffect.HELL_PORTAL_1);
+  }
+
   if (frust.TPDelay === 0) {
     player.Position = Isaac.GetFreeNearPosition(Isaac.GetRandomPosition(), 5);
     player.GetSprite().Play("TeleportDown", true);
+    SFXManager().Play(SoundEffect.HELL_PORTAL_2);
     player.AddControlsCooldown(Constants.TPPostControlCD);
     frust.TPDelay = -1;
   } else if (frust.TPDelay > 0) {
@@ -50,6 +55,7 @@ function FrustrationUse(_: CollectibleType, __: RNG, player: EntityPlayer, useFl
     player.AddControlsCooldown(Constants.TPControlCD);
     player.PlayExtraAnimation("Sad");
     player.QueueExtraAnimation("TeleportUp");
+    SFXManager().Play(SoundEffect.THUMBS_DOWN);
     frust.TPDelay = Constants.TPUpDelay;
   }
   return false;

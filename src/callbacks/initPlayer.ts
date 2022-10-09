@@ -1,5 +1,5 @@
 import { ModCallbackCustom, ModUpgraded } from "isaacscript-common";
-import { Constants } from "../enums/Constants";
+import { Globals } from "../enums/Globals";
 import { PlayerTypes } from "../enums/PlayerTypes";
 import { initAstra } from "./initPlayer/astra";
 import { initAstraB } from "./initPlayer/astra_b";
@@ -9,7 +9,7 @@ export function initPlayerInit(mod: ModUpgraded, _: Mod): void {
 }
 
 function initPlayer(player: EntityPlayer) {
-  const shinyRNG: number = RNG().RandomInt(Constants.SHINY_ODDS);
+  const shinyRNG: number = RNG().RandomInt(Globals.SHINY_ODDS);
   switch (player.GetPlayerType()) {
     case PlayerTypes.ASTRA:
       initAstra(player, shinyRNG === 0);

@@ -1,7 +1,8 @@
 import { Collectibles } from "../../enums/Collectibles";
 import { Costumes } from "../../enums/Costumes";
+import { Globals } from "../../enums/Globals";
 import { getOrDefault } from "../../helpers";
-import { ConfusionConstants as Constants } from "./Constants";
+import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, ConfusionVolatileData, locals, saved } from "./variables";
 
 export function ConfusionRender(player: EntityPlayer, _: Vector): void {
@@ -17,8 +18,7 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
       // Variables
       const CH = conf.ChargeProgress;
       const CR = math.sqrt(conf.ChargeProgress);
-      const Why = Game().ScreenShakeOffset;
-      const SSh = Vector(Why.X, Why.Y);
+      const SSh = Vector(Game().ScreenShakeOffset.X, Game().ScreenShakeOffset.Y);
 
       // Speeeeen
       conf.Angle += Constants.ShotSpeedSpinMul * player.ShotSpeed;
@@ -51,9 +51,9 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
             conf.InnerRange * math.sqrt(conf.DischargeTopCharge) * (2 - math.sqrt(conf.ChargeProgress)) * Constants.RepelRenderMul * Constants.RepelRenderVerticalStretch
           );
           const C = Constants.RepelColor;
-          local.RepelEffect.SetColor(Color(C.R, C.G, C.G, C.A * math.sqrt(conf.ChargeProgress), C.RO, C.GO, C.BO), Constants.Infinity, Constants.EffectColorPriority);
+          local.RepelEffect.SetColor(Color(C.R, C.G, C.G, C.A * math.sqrt(conf.ChargeProgress), C.RO, C.GO, C.BO), Globals.INFINITY, Globals.COLOR_PRIORITY);
         } else {
-          local.RepelEffect.SetColor(Constants.RepelColor, Constants.Infinity, Constants.EffectColorPriority);
+          local.RepelEffect.SetColor(Constants.RepelColor, Globals.INFINITY, Globals.COLOR_PRIORITY);
           local.RepelEffect.SpriteScale = Vector(
             conf.InnerRange * math.sqrt(conf.ChargeProgress) * Constants.RepelRenderMul,
             conf.InnerRange * math.sqrt(conf.ChargeProgress) * Constants.RepelRenderMul * Constants.RepelRenderVerticalStretch
@@ -75,7 +75,7 @@ export function ConfusionRender(player: EntityPlayer, _: Vector): void {
         }
 
         Wisp.Visible = true;
-        Wisp.SetColor(Color(C.R, C.G, C.B, C.A * CH * CH, C.RO * CR, C.GO * CR, C.BO * CR), Constants.Infinity, Constants.EffectColorPriority);
+        Wisp.SetColor(Color(C.R, C.G, C.B, C.A * CH * CH, C.RO * CR, C.GO * CR, C.BO * CR), Globals.INFINITY, Globals.COLOR_PRIORITY);
 
         for (let i = 0; i < Constants.WispsNum; i++) {
           const Angle = conf.Angle + i * ((2 * math.pi) / Constants.WispsNum);

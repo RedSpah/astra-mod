@@ -2,7 +2,7 @@ import { CacheFlag, DamageFlag, Direction, EffectVariant, EntityPartition, Entit
 import { addFlag, hasFlag, spawn } from "isaacscript-common";
 import { Collectibles } from "../../enums/Collectibles";
 import { getOrDefault } from "../../helpers";
-import { ConfusionConstants as Constants } from "./Constants";
+import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";
 
 export function ConfusionCharge(player: EntityPlayer): void {

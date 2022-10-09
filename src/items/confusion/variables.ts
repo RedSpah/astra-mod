@@ -1,6 +1,7 @@
 import { EffectVariant, EntityType } from "isaac-typescript-definitions";
 import { getRandomSeed, spawn } from "isaacscript-common";
-import { ConfusionConstants as Constants } from "./Constants";
+import { Globals } from "../../enums/Globals";
+import { ConfusionConstants as Constants } from "./constants";
 
 export class ConfusionVolatileData {
   ChargeSprite: Sprite;
@@ -51,8 +52,8 @@ export class ConfusionVolatileData {
 
       this.RepelEffect = spawn(EntityType.EFFECT, EffectVariant.PULLING_EFFECT, 0, Vector(-100, -100)).ToEffect();
       if (this.RepelEffect !== undefined) {
-        this.RepelEffect.SetTimeout(Constants.Infinity);
-        this.RepelEffect.SetColor(Constants.RepelColor, Constants.Infinity, Constants.EffectColorPriority);
+        this.RepelEffect.SetTimeout(Globals.INFINITY);
+        this.RepelEffect.SetColor(Constants.RepelColor, Globals.INFINITY, Globals.COLOR_PRIORITY);
         this.RepelEffect.Visible = false;
       }
     }

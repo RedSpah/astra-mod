@@ -1,7 +1,7 @@
 import { CacheFlag } from "isaac-typescript-definitions";
 import { Collectibles } from "../../enums/Collectibles";
 import { getOrDefault } from "../../helpers";
-import { ConfusionConstants as Constants } from "./Constants";
+import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";
 
 export function ConfusionTearSlowdown(player: EntityPlayer, cacheFlag: CacheFlag): void {

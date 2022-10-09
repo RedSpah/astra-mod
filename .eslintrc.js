@@ -15,7 +15,7 @@ module.exports = {
   },
 
   rules: {
-    "max-classes-per-file": ["error", 2],
+    "max-classes-per-file": ["error", 69],
     "no-nested-ternary": "off",
     "isaacscript/complete-sentences-line-comments": "off"
     // Insert changed or disabled rules here, if necessary.

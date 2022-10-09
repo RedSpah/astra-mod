@@ -1,22 +1,20 @@
-import { ActiveSlot, ButtonAction, CollectibleType, EffectVariant, EntityType, InputHook, ModCallback, PlayerItemAnimation, UseFlag } from "isaac-typescript-definitions";
-import { hasFlag, ModUpgraded, saveDataManager, saveDataManagerRegisterClass, spawn } from "isaacscript-common";
+import { ActiveSlot, ButtonAction, CollectibleType, EffectVariant, EntityType, InputHook, ModCallback, PlayerItemAnimation, SoundEffect, UseFlag } from "isaac-typescript-definitions";
+import { getPlayers, hasFlag, ModUpgraded, saveDataManager, saveDataManagerRegisterClass, spawn } from "isaacscript-common";
 import { Collectibles } from "../enums/Collectibles";
-import { getOrDefault } from "../helpers";
+import { Globals } from "../enums/Globals";
+import { getFireVector, getOrDefault } from "../helpers";
 
 const Constants = {
-  ReticuleMoveSpeed: 13,
+  ReticuleMoveSpeed: 8,
   BlinkCD: 150,
   TPUpDelay: 10,
   TPControlCD: 20,
-  TPPostControlCD: 19
+  TPPostControlCD: 19,
+  ReticuleStillSlowMul: 0.5
 } as const;
 
 export class BlinkVolatileData {
   AimReticule: EntityEffect | undefined;
-
-  constructor() {
-    this.refreshReticule();
-  }
 
   public refreshReticule(): void {
     if (this.AimReticule === undefined || this.AimReticule.IsDead()) {
@@ -24,12 +22,12 @@ export class BlinkVolatileData {
         this.AimReticule.Remove();
       }
 
-      this.AimReticule = spawn(EntityType.EFFECT, EffectVariant.TARGET, 2, Vector(-100, -100)).ToEffect();
+      this.AimReticule = spawn(EntityType.EFFECT, EffectVariant.OCCULT_TARGET, 2, Vector(-100, -100)).ToEffect();
 
       if (this.AimReticule !== undefined) {
         this.AimReticule.SetTimeout(1000000);
         this.AimReticule.Visible = false;
-        this.AimReticule.SetColor(Color(0, 1, 1, 1, 0, 1, 1), 1000000, 99);
+        this.AimReticule.SetColor(Color(0, 1, 1, 1, 0, 1, 1), Globals.INFINITY, Globals.COLOR_PRIORITY);
       }
     }
   }
@@ -42,6 +40,8 @@ export class BlinkData {
   Slot = ActiveSlot.PRIMARY;
   TPDownFrame = 0;
   ButtonLock = false;
+  AimReticuleVelocity = Vector(0, 0);
+  AimReticulePos = Vector(0, 0);
 }
 
 export const locals: Map<PtrHash, BlinkVolatileData> = new Map<PtrHash, BlinkVolatileData>();
@@ -56,6 +56,7 @@ export function blinkInit(_: ModUpgraded, modVanilla: Mod): void {
   saveDataManager("astra.blink", saved);
   saveDataManagerRegisterClass(BlinkData);
   modVanilla.AddCallback(ModCallback.POST_PEFFECT_UPDATE, BlinkProcess);
+  modVanilla.AddCallback(ModCallback.POST_RENDER, Blink60FPSProcess);
   modVanilla.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, Collectibles.BLINK);
   modVanilla.AddCallback(ModCallback.INPUT_ACTION, BlinkUseInputBlock);
 }
@@ -63,69 +64,59 @@ export function blinkInit(_: ModUpgraded, modVanilla: Mod): void {
 function BlinkProcess(player: EntityPlayer) {
   const playerHash = GetPtrHash(player);
 
-  const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
-  const local = getOrDefault(locals, playerHash, BlinkVolatileData);
+  if (player.HasCollectible(Collectibles.BLINK)) {
+    const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
 
-  if (blink.InUse) {
-    // Resetting the charge in case you get damaged out of using Blink
-    if (!player.IsHoldingItem()) {
-      blink.InUse = false;
-      player.SetActiveCharge(Constants.BlinkCD, blink.Slot);
-    }
+    if (blink.InUse) {
+      // Resetting the charge in case you get damaged out of using Blink
+      if (!player.IsHoldingItem()) {
+        blink.InUse = false;
+        player.SetActiveCharge(Constants.BlinkCD, blink.Slot);
+      }
 
-    local.refreshReticule();
-    if (local.AimReticule !== undefined) {
-      local.AimReticule.Visible = true;
-      let MoveVec = Vector(0, 0);
       const Speed = player.ShotSpeed * Constants.ReticuleMoveSpeed;
-      if (Input.IsActionPressed(ButtonAction.SHOOT_DOWN, player.ControllerIndex)) {
-        MoveVec = MoveVec.add(Vector(0, Speed));
+      const MoveVec = getFireVector(player);
+
+      if (MoveVec.X === 0 && MoveVec.Y === 0) {
+        blink.AimReticuleVelocity = blink.AimReticuleVelocity.mul(Constants.ReticuleStillSlowMul);
+      } else {
+        blink.AimReticuleVelocity = blink.AimReticuleVelocity.Normalized().mul(0.25).add(MoveVec.mul(0.75)).Normalized().mul(Speed);
       }
-      if (Input.IsActionPressed(ButtonAction.SHOOT_LEFT, player.ControllerIndex)) {
-        MoveVec = MoveVec.add(Vector(-Speed, 0));
-      }
-      if (Input.IsActionPressed(ButtonAction.SHOOT_RIGHT, player.ControllerIndex)) {
-        MoveVec = MoveVec.add(Vector(Speed, 0));
-      }
-      if (Input.IsActionPressed(ButtonAction.SHOOT_UP, player.ControllerIndex)) {
-        MoveVec = MoveVec.add(Vector(0, -Speed));
-      }
-      local.AimReticule.Position = Game().GetRoom().GetClampedPosition(local.AimReticule.Position.add(MoveVec), 0);
 
       if (
         !blink.ButtonLock &&
         ((Input.IsActionPressed(ButtonAction.ITEM, player.ControllerIndex) && blink.Slot === ActiveSlot.PRIMARY) ||
           (Input.IsActionPressed(ButtonAction.PILL_CARD, player.ControllerIndex) && blink.Slot === ActiveSlot.POCKET))
       ) {
-        blink.TPDest = local.AimReticule.Position;
+        blink.TPDest = blink.AimReticulePos;
         blink.TPDelay = Constants.TPUpDelay;
 
-        local.AimReticule.Remove();
-        local.AimReticule = undefined;
         blink.InUse = false;
 
         player.AddControlsCooldown(Constants.TPControlCD);
         player.PlayExtraAnimation("TeleportUp");
+        SFXManager().Play(SoundEffect.HELL_PORTAL_1);
+      }
+
+      // Locking the item from instantly activating
+      if (
+        (blink.ButtonLock && !Input.IsActionPressed(ButtonAction.ITEM, player.ControllerIndex) && blink.Slot === ActiveSlot.PRIMARY) ||
+        (!Input.IsActionPressed(ButtonAction.PILL_CARD, player.ControllerIndex) && blink.Slot === ActiveSlot.POCKET)
+      ) {
+        blink.ButtonLock = false;
       }
     }
 
-    // Locking the item from instantly activating
-    if (
-      (blink.ButtonLock && !Input.IsActionPressed(ButtonAction.ITEM, player.ControllerIndex) && blink.Slot === ActiveSlot.PRIMARY) ||
-      (!Input.IsActionPressed(ButtonAction.PILL_CARD, player.ControllerIndex) && blink.Slot === ActiveSlot.POCKET)
-    ) {
-      blink.ButtonLock = false;
+    // Yeet
+    if (blink.TPDelay === 0) {
+      SFXManager().Play(SoundEffect.HELL_PORTAL_2);
+      player.Position = Game().GetRoom().FindFreeTilePosition(blink.TPDest, 0);
+      player.GetSprite().Play("TeleportDown", true);
+      player.AddControlsCooldown(Constants.TPPostControlCD);
+      blink.TPDelay = -1;
+    } else if (blink.TPDelay > 0) {
+      blink.TPDelay = math.max(0, blink.TPDelay - 1);
     }
-  }
-
-  // Yeet
-  if (blink.TPDelay === 0) {
-    player.Position = Game().GetRoom().FindFreeTilePosition(blink.TPDest, 0);
-    player.GetSprite().Play("TeleportDown", true);
-    player.AddControlsCooldown(Constants.TPPostControlCD);
-    blink.TPDelay = -1;
-  } else if (blink.TPDelay > 0) {
-    blink.TPDelay = math.max(0, blink.TPDelay - 1);
   }
 }
 
@@ -139,7 +130,8 @@ function BlinkUse(_: CollectibleType, __: RNG, player: EntityPlayer, useFlags: B
     if (!blink.InUse && blink.TPDelay === -1) {
       local.refreshReticule();
       if (local.AimReticule !== undefined) {
-        local.AimReticule.Position = player.Position;
+        blink.AimReticulePos = player.Position;
+        blink.AimReticuleVelocity = Vector(0, 0);
         local.AimReticule.Visible = true;
         player.AnimateCollectible(Collectibles.BLINK, PlayerItemAnimation.LIFT_ITEM);
 
@@ -170,4 +162,30 @@ function BlinkUseInputBlock(entity: Entity | undefined, _: InputHook, button: Bu
     }
   }
   return undefined;
+}
+
+function Blink60FPSProcess() {
+  if (!Game().IsPaused()) {
+    for (const player of getPlayers()) {
+      const playerHash = GetPtrHash(player);
+
+      if (player.HasCollectible(Collectibles.BLINK)) {
+        const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
+        const local = getOrDefault(locals, playerHash, BlinkVolatileData);
+        if (blink.InUse) {
+          local.refreshReticule();
+          if (local.AimReticule !== undefined) {
+            blink.AimReticulePos = Game().GetRoom().GetClampedPosition(blink.AimReticulePos.add(blink.AimReticuleVelocity), 0);
+            local.AimReticule.Position = blink.AimReticulePos;
+          }
+        } else if (local.AimReticule !== undefined) {
+          local.AimReticule.Remove();
+        }
+
+        if (local.AimReticule !== undefined && !local.AimReticule.IsDead()) {
+          local.AimReticule.Visible = blink.InUse;
+        }
+      }
+    }
+  }
 }
