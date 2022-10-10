@@ -52,13 +52,13 @@ export const saved = {
   }
 };
 
-export function blinkInit(_: ModUpgraded, modVanilla: Mod): void {
+export function blinkInit(mod: ModUpgraded): void {
   saveDataManager("astra.blink", saved);
   saveDataManagerRegisterClass(BlinkData);
-  modVanilla.AddCallback(ModCallback.POST_PEFFECT_UPDATE, BlinkProcess);
-  modVanilla.AddCallback(ModCallback.POST_RENDER, Blink60FPSProcess);
-  modVanilla.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, Collectibles.BLINK);
-  modVanilla.AddCallback(ModCallback.INPUT_ACTION, BlinkUseInputBlock);
+  mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, BlinkProcess);
+  mod.AddCallback(ModCallback.POST_RENDER, Blink60FPSProcess);
+  mod.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, Collectibles.BLINK);
+  mod.AddCallback(ModCallback.INPUT_ACTION, BlinkUseInputBlock);
 }
 
 function BlinkProcess(player: EntityPlayer) {

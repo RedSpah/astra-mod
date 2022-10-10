@@ -4,8 +4,9 @@ import { PlayerTypes } from "../enums/PlayerTypes";
 import { initAstra } from "./initPlayer/astra";
 import { initAstraB } from "./initPlayer/astra_b";
 
-export function initPlayerInit(mod: ModUpgraded, _: Mod): void {
+export function initPlayerInit(mod: ModUpgraded): void {
   mod.AddCallbackCustom(ModCallbackCustom.POST_PLAYER_INIT_FIRST, initPlayer);
+  // purityInit(mod);
 }
 
 function initPlayer(player: EntityPlayer) {

@@ -1,19 +1,18 @@
 import { ModCallback } from "isaac-typescript-definitions";
 import { ModUpgraded, upgradeMod } from "isaacscript-common";
-
 import { evaluateCacheInit } from "./callbacks/evaluateCache";
 import { initPlayerInit } from "./callbacks/initPlayer";
 import { initItems } from "./items/initItems";
 
-const MOD_NAME = "astra";
+const MOD_NAME = "Astra Mod v2.0";
 
 export function main(): void {
   // Instantiate a new mod object, which grants the ability to add callback functions that
   // correspond to in-game events.
-  const modVanilla = RegisterMod(MOD_NAME, 1);
-  const mod = upgradeMod(modVanilla);
+  const mod = upgradeMod(RegisterMod(MOD_NAME, 1));
 
-  registerCallbacks(mod, modVanilla);
+  registerCallbacks(mod);
+  mod.Name = MOD_NAME;
 
   // Register a callback function that corresponds to when a new run is started.
   mod.AddCallback(ModCallback.POST_GAME_STARTED, postGameStarted);
@@ -27,9 +26,8 @@ function postGameStarted() {
   Isaac.DebugString("Callback fired: POST_GAME_STARTED");
 }
 
-function registerCallbacks(mod: ModUpgraded, modVanilla: Mod) {
-  initPlayerInit(mod, modVanilla);
-  evaluateCacheInit(mod, modVanilla);
-
-  initItems(mod, modVanilla);
+function registerCallbacks(mod: ModUpgraded) {
+  initPlayerInit(mod);
+  evaluateCacheInit(mod);
+  initItems(mod);
 }

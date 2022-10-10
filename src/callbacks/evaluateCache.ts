@@ -4,8 +4,8 @@ import { PlayerTypes } from "../enums/PlayerTypes";
 import { evaluateCacheAstra } from "./evaluateCache/astra";
 import { evaluateCacheAstraB } from "./evaluateCache/astra_b";
 
-export function evaluateCacheInit(_: ModUpgraded, modVanilla: Mod): void {
-  modVanilla.AddCallback(ModCallback.EVALUATE_CACHE, evaluateCachePlayers);
+export function evaluateCacheInit(mod: ModUpgraded): void {
+  mod.AddCallback(ModCallback.EVALUATE_CACHE, evaluateCachePlayers);
 }
 
 function evaluateCachePlayers(player: EntityPlayer, cacheFlag: CacheFlag) {

@@ -7,11 +7,11 @@ import { DoomDesireRefresh } from "./doom_desire/refresh";
 import { DoomDesireRender } from "./doom_desire/render";
 import { DoomDesireData, saved } from "./doom_desire/variables";
 
-export function doomDesireInit(_: ModUpgraded, modVanilla: Mod): void {
+export function doomDesireInit(mod: ModUpgraded): void {
   saveDataManager("astra.doom_desire", saved);
   saveDataManagerRegisterClass(DoomDesireData);
-  modVanilla.AddCallback(ModCallback.POST_PEFFECT_UPDATE, DoomDesireProcess);
-  modVanilla.AddCallback(ModCallback.POST_RENDER, DoomDesire60FPSProcess);
-  modVanilla.AddCallback(ModCallback.POST_PLAYER_RENDER, DoomDesireRender);
-  modVanilla.AddCallback(ModCallback.POST_NEW_ROOM, DoomDesireRefresh);
+  mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, DoomDesireProcess);
+  mod.AddCallback(ModCallback.POST_RENDER, DoomDesire60FPSProcess);
+  mod.AddCallback(ModCallback.POST_PLAYER_RENDER, DoomDesireRender);
+  mod.AddCallback(ModCallback.POST_NEW_ROOM, DoomDesireRefresh);
 }

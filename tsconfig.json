@@ -23,11 +23,11 @@
       { "name": "./plugins/addIsaacScriptCommentHeader.ts" },
 
       // A plugin to make enums safe from global variables
-      { "name": "./plugins/noExtendedEnums.ts" }
+      { "name": "./plugins/noExtendedEnums.ts" },
 
       // Uncomment this and recompile the mod to enable crash debugging, which will tell you the
       // exact line of the mod that is causing the crash
-      // { "name": "./plugins/addCrashDebugStatements.ts" },
+      { "name": "./plugins/addCrashDebugStatements.ts" },
     ]
   }
 }

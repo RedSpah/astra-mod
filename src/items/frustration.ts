@@ -19,11 +19,11 @@ export const saved = {
   }
 };
 
-export function frustrationInit(_: ModUpgraded, modVanilla: Mod): void {
+export function frustrationInit(mod: ModUpgraded): void {
   saveDataManager("astra.frustration", saved);
   saveDataManagerRegisterClass(FrustrationData);
-  modVanilla.AddCallback(ModCallback.POST_PEFFECT_UPDATE, FrustrationProcess);
-  modVanilla.AddCallback(ModCallback.PRE_USE_ITEM, FrustrationUse, Collectibles.FRUSTRATION);
+  mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, FrustrationProcess);
+  mod.AddCallback(ModCallback.PRE_USE_ITEM, FrustrationUse, Collectibles.FRUSTRATION);
 }
 
 function FrustrationProcess(player: EntityPlayer) {
