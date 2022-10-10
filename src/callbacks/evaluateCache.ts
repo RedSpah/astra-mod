@@ -1,10 +1,10 @@
 import { CacheFlag, ModCallback } from "isaac-typescript-definitions";
-import { ModUpgraded } from "isaacscript-common";
 import { PlayerTypes } from "../enums/PlayerTypes";
+import { mod } from "../mod";
 import { evaluateCacheAstra } from "./evaluateCache/astra";
 import { evaluateCacheAstraB } from "./evaluateCache/astra_b";
 
-export function evaluateCacheInit(mod: ModUpgraded): void {
+export function evaluateCacheInit(): void {
   mod.AddCallback(ModCallback.EVALUATE_CACHE, evaluateCachePlayers);
 }
 

@@ -1,7 +1,8 @@
 import { ActiveSlot, CollectibleType, ModCallback, SoundEffect, UseFlag } from "isaac-typescript-definitions";
-import { hasFlag, ModUpgraded, saveDataManager, saveDataManagerRegisterClass } from "isaacscript-common";
+import { hasFlag } from "isaacscript-common";
 import { Collectibles } from "../enums/Collectibles";
 import { getOrDefault } from "../helpers";
+import { mod } from "../mod";
 
 const Constants = {
   TPUpDelay: 40,
@@ -19,9 +20,9 @@ export const saved = {
   }
 };
 
-export function frustrationInit(mod: ModUpgraded): void {
-  saveDataManager("astra.frustration", saved);
-  saveDataManagerRegisterClass(FrustrationData);
+export function frustrationInit(): void {
+  mod.saveDataManager("astra.frustration", saved);
+  mod.saveDataManagerRegisterClass(FrustrationData);
   mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, FrustrationProcess);
   mod.AddCallback(ModCallback.PRE_USE_ITEM, FrustrationUse, Collectibles.FRUSTRATION);
 }

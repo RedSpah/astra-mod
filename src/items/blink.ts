@@ -1,8 +1,9 @@
 import { ActiveSlot, ButtonAction, CollectibleType, EffectVariant, EntityType, InputHook, ModCallback, PlayerItemAnimation, SoundEffect, UseFlag } from "isaac-typescript-definitions";
-import { getPlayers, hasFlag, ModUpgraded, saveDataManager, saveDataManagerRegisterClass, spawn } from "isaacscript-common";
+import { getPlayers, hasFlag, spawn } from "isaacscript-common";
 import { Collectibles } from "../enums/Collectibles";
 import { Globals } from "../enums/Globals";
 import { getFireVector, getOrDefault } from "../helpers";
+import { mod } from "../mod";
 
 const Constants = {
   ReticuleMoveSpeed: 8,
@@ -52,9 +53,9 @@ export const saved = {
   }
 };
 
-export function blinkInit(mod: ModUpgraded): void {
-  saveDataManager("astra.blink", saved);
-  saveDataManagerRegisterClass(BlinkData);
+export function blinkInit(): void {
+  mod.saveDataManager("astra.blink", saved);
+  mod.saveDataManagerRegisterClass(BlinkData);
   mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, BlinkProcess);
   mod.AddCallback(ModCallback.POST_RENDER, Blink60FPSProcess);
   mod.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, Collectibles.BLINK);

@@ -1,13 +1,14 @@
-import { ModCallbackCustom, ModUpgraded } from "isaacscript-common";
+import { ModCallbackCustom } from "isaacscript-common";
 import { Globals } from "../enums/Globals";
 import { PlayerTypes } from "../enums/PlayerTypes";
+import { mod } from "../mod";
 import { initAstra } from "./initPlayer/astra";
 import { initAstraB } from "./initPlayer/astra_b";
 import { purityInit } from "./purity";
 
-export function initPlayerInit(mod: ModUpgraded): void {
+export function initPlayerInit(): void {
   mod.AddCallbackCustom(ModCallbackCustom.POST_PLAYER_INIT_FIRST, initPlayer);
-  purityInit(mod);
+  purityInit();
 }
 
 function initPlayer(player: EntityPlayer) {

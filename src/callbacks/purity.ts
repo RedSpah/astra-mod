@@ -1,10 +1,11 @@
 import { ActiveSlot, CacheFlag, CollectibleType, EntityType, ModCallback, RoomType, SoundEffect } from "isaac-typescript-definitions";
-import { addFlag, getPlayerCollectibleCount, getPlayers, ModCallbackCustom, ModUpgraded, PickingUpItem, saveDataManager, saveDataManagerRegisterClass } from "isaacscript-common";
+import { addFlag, getPlayerCollectibleCount, getPlayers, ModCallbackCustom, PickingUpItem } from "isaacscript-common";
 import { AstraStats } from "../enums/AstraStats";
 import { Collectibles } from "../enums/Collectibles";
 import { Costumes } from "../enums/Costumes";
 import { PlayerTypes } from "../enums/PlayerTypes";
 import { getOrDefault } from "../helpers";
+import { mod } from "../mod";
 
 const Constants = {
   EvilItemDamageMul: 0.9,
@@ -38,9 +39,9 @@ export const saved = {
   }
 };
 
-export function purityInit(mod: ModUpgraded): void {
-  saveDataManager("astra.purity", saved);
-  saveDataManagerRegisterClass(PurityData);
+export function purityInit(): void {
+  mod.saveDataManager("astra.purity", saved);
+  mod.saveDataManagerRegisterClass(PurityData);
   mod.AddCallbackCustom(ModCallbackCustom.POST_NEW_ROOM_EARLY, PurityNewRoom);
   mod.AddCallbackCustom(ModCallbackCustom.POST_ITEM_PICKUP, PurityNewItem);
   mod.AddCallback(ModCallback.PRE_PICKUP_COLLISION, PurityDevilDeal);
