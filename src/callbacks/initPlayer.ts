@@ -3,10 +3,11 @@ import { Globals } from "../enums/Globals";
 import { PlayerTypes } from "../enums/PlayerTypes";
 import { initAstra } from "./initPlayer/astra";
 import { initAstraB } from "./initPlayer/astra_b";
+import { purityInit } from "./purity";
 
 export function initPlayerInit(mod: ModUpgraded): void {
   mod.AddCallbackCustom(ModCallbackCustom.POST_PLAYER_INIT_FIRST, initPlayer);
-  // purityInit(mod);
+  purityInit(mod);
 }
 
 function initPlayer(player: EntityPlayer) {
