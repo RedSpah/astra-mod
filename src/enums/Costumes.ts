@@ -1,8 +1,11 @@
 export const Costumes = {
   ASTRA_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrahairfull.anm2"),
-  ASTRA_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrahairfull_shiny.anm2"),
-  ASTRA_B_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrahairfull.anm2"),
-  ASTRA_B_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrahairfull_shiny.anm2"),
+  ASTRA_SIDE_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrasidehair.anm2"),
+  ASTRA_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astraheadonelayer_shiny.anm2"),
+  ASTRA_B_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrasidehair.anm2"),
+  ASTRA_B_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastraheadonelayer_shiny.anm2"),
+  ASTRA_BODY_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrabody_shiny.anm2"),
+  ASTRA_B_BODY_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrabody_shiny.anm2"),
 
   CONF_CHARGE_ANIM: [
     Isaac.GetCostumeIdByPath("gfx/characters/confusion_charge1.anm2"),

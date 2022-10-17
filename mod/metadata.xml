@@ -1,8 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <name>astra</name>
-  <directory>astra</directory>
-  <description>astra is a currently a work in progress.</description>
-  <version>1.0</version>
-  <visibility />
+    <name>Astra Mod 2.0</name>
+    <directory>astramod</directory>
+    <id>2520973701</id>
+    <description>Introducing Astra, a child from a far distant world.
+
+Repentance support only.
+
+[h1]Update 2.0 - 17/10/22[/h1]
+
+The 2.0 update features a complete rewrite and partial redesign of the mod in order to make it less buggy, better looking and more fun to play. See the updates tab for the full list of changes.
+
+
+Adds two new characters:
+
+[h1]* Astra - The Freak[/h1]
+
+Her psychic powers let her keep her enemies at bay and briefly stun them upon fully charging, with her Blink letting her access normally inaccessible locations. Stay far from the influence of evil however, as her gifts are only for the pure of heart...
+
+
+[h1]* Tainted Astra - The Fiend[/h1]
+
+Having her heart broken by the dark, she receives drastically reduced healing from heart drops, and her mere sight draws the wrath of heaven's messengers. Her corruption did not come without a boon though, as now her mind only dreams of destruction, bringing it to the decrepit world around her...
+
+</description>
+    <version>2.0</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Active Items"/>
+    <tag id="Player Characters"/>
 </metadata>

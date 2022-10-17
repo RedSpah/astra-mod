@@ -3,7 +3,8 @@ export const ConfusionConstants = {
   ExplosionDamageMul: 16,
   ChargeTimeBase: 30,
   ChargeTimeFireDelayMul: 3,
-  OuterRangeMul: -5,
+  OuterRangeBase: 45,
+  OuterRangeMul: -2.5,
   InnerRangeMul: 0.6,
   SlowingFactor: 0.9,
   ExplosionMinCharge: 0.5,
@@ -17,7 +18,6 @@ export const ConfusionConstants = {
   // VFX
   ShotSpeedSpinMul: 0.1,
   WispsNum: 120,
-  EffectColorPriority: 999,
   WispRenderDistMul: 0.66,
   WispRenderVertOffset: Vector(0, 12),
   ChargeSpriteOffset: Vector(20, -35),

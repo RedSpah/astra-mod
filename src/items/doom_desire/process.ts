@@ -1,9 +1,9 @@
 import { CollectibleType, EffectVariant, EntityType, LaserOffset, LaserVariant, SoundEffect, WeaponType } from "isaac-typescript-definitions";
 import { getPlayerCollectibleCount, playerHasCollectible, spawn, spawnKnife, spawnLaser } from "isaacscript-common";
 
-import { Collectibles } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/Collectibles";
 import { Globals } from "../../enums/Globals";
-import { PlayerTypes } from "../../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../../enums/PlayerTypes";
 import { getApproxNumTears, getFireVector, getOrDefault, rollRange } from "../../helpers";
 import { DoomDesireBoomyItemList, DoomDesireConstants as Constants } from "./constants";
 
@@ -11,7 +11,7 @@ import { DoomDesireData, DoomDesireVolatileData, locals, ManualKnifeData, saved 
 
 export function DoomDesireProcess(player: EntityPlayer): void {
   const playerHash = GetPtrHash(player);
-  if (player.HasCollectible(Collectibles.DOOM_DESIRE)) {
+  if (player.HasCollectible(CollectibleCustom.DOOM_DESIRE)) {
     // Variable setup
     const dd = getOrDefault(saved.run.conf, playerHash, DoomDesireData);
     const local = getOrDefault(locals, playerHash, DoomDesireVolatileData);
@@ -21,7 +21,7 @@ export function DoomDesireProcess(player: EntityPlayer): void {
 
     // Freeze the max CD while it's in the process of cooling down
     if (!dd.CoolingDown) {
-      dd.MaxCD = Constants.CDBase;
+      dd.MaxCD = Constants.CDBase + Constants.CDFireDelayMul * player.MaxFireDelay;
     }
 
     // Can't get normal firing direction since T.Astra is blindfolded
@@ -72,7 +72,7 @@ export function DoomDesireProcess(player: EntityPlayer): void {
     if (dd.CrackDuration > 0) {
       dd.CrackSoulCounter +=
         Constants.CrackSoulsPerFrame +
-        (player.GetPlayerType() === PlayerTypes.ASTRA_B ? Constants.TAstraSouls : 0) +
+        (player.GetPlayerType() === PlayerTypeCustom.ASTRA_B ? Constants.TAstraSouls : 0) +
         getPlayerCollectibleCount(player, ...DoomDesireBoomyItemList) * Constants.BoomyItemMul;
 
       const BaseShotSpeed = player.ShotSpeed * Constants.FireShotSpeedMul;
@@ -101,7 +101,7 @@ export function DoomDesireProcess(player: EntityPlayer): void {
           const ShotSpeedMul = rollRange(Constants.ShotSpeedSpreadMin, Constants.ShotSpeedSpreadMax, local.RNG);
           const Size = rollRange(Constants.SizeSpreadMin, Constants.SizeSpreadMax, local.RNG);
 
-          const Laser = player.FireTechXLaser(dd.ExplosionPos, Direction.mul(BaseShotSpeed * ShotSpeedMul), Size, player, DamageMul);
+          const Laser = player.FireTechXLaser(dd.ExplosionPos, Direction.mul(BaseShotSpeed * ShotSpeedMul), BaseShotSpeed * Size, player, DamageMul);
           Laser.SetColor(GetTearColor(local.RNG), Globals.INFINITY, Globals.COLOR_PRIORITY);
         }
       } else if (player.HasWeaponType(WeaponType.BRIMSTONE)) {
@@ -120,7 +120,7 @@ export function DoomDesireProcess(player: EntityPlayer): void {
           Brim.CollisionDamage = player.Damage * rollRange(Constants.DamageSpreadMin, Constants.DamageSpreadMax, local.RNG);
           Brim.AddTearFlags(player.TearFlags);
           Brim.Angle = local.RNG.RandomFloat() * 360;
-          Brim.SetTimeout(math.floor(rollRange(Constants.DamageSpreadMin, Constants.DamageSpreadMax, local.RNG)));
+          Brim.SetTimeout(math.floor(rollRange(Constants.BrimTimeoutMin, Constants.BrimTimeoutMax, local.RNG)));
           Brim.SetColor(GetTearColor(local.RNG), Globals.INFINITY, Globals.COLOR_PRIORITY);
           Brim.DepthOffset = 200;
         }
@@ -144,7 +144,7 @@ export function DoomDesireProcess(player: EntityPlayer): void {
 
           const KnifeHash = GetPtrHash(Knife);
           const KnifeData = getOrDefault(saved.room.ddknives, KnifeHash, ManualKnifeData);
-          KnifeData.Velocity = Direction.mul(rollRange(Constants.ShotSpeedSpreadMin, Constants.ShotSpeedSpreadMax, local.RNG));
+          KnifeData.Velocity = Direction.mul(rollRange(Constants.ShotSpeedSpreadMin, Constants.ShotSpeedSpreadMax, local.RNG)).mul(Constants.KnifeSpeedMul);
           KnifeData.LifeSpan = rollRange(Constants.KnifeTimeoutMin, Constants.KnifeTimeoutMax, local.RNG);
           KnifeData.Splatted = false;
         }

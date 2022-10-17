@@ -1,13 +1,14 @@
-import { evaluateCacheInit } from "./callbacks/evaluateCache";
-import { initPlayerInit } from "./callbacks/initPlayer";
+import { getRandomSeed, printConsole } from "isaacscript-common";
+import { initCallbacks } from "./callbacks/initPlayer";
 import { initItems } from "./items/initItems";
+import { modRNG, MOD_VER } from "./mod";
+import { initOtherMods } from "./other_mods";
 
 export function main(): void {
-  registerCallbacks();
-}
-
-function registerCallbacks() {
-  initPlayerInit();
-  evaluateCacheInit();
+  modRNG.SetSeed(getRandomSeed(), 35);
+  initOtherMods();
+  initCallbacks();
   initItems();
+
+  printConsole(`Astra Mod Loaded v${MOD_VER}.`);
 }

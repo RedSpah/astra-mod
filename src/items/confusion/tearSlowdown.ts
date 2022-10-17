@@ -1,5 +1,5 @@
 import { CacheFlag } from "isaac-typescript-definitions";
-import { Collectibles } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/Collectibles";
 import { getOrDefault } from "../../helpers";
 import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";
@@ -7,7 +7,7 @@ import { ConfusionData, saved } from "./variables";
 export function ConfusionTearSlowdown(player: EntityPlayer, cacheFlag: CacheFlag): void {
   const playerHash = GetPtrHash(player);
 
-  if (player.HasCollectible(Collectibles.CONFUSION)) {
+  if (player.HasCollectible(CollectibleCustom.CONFUSION)) {
     // Variable setup
     const conf = getOrDefault(saved.run.conf, playerHash, ConfusionData);
 

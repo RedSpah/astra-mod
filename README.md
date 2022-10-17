@@ -1,10 +1,12 @@
-# astra
+# Astra Mod 2.0
 
-astra is a mod for _[The Binding of Isaac: Repentance](https://store.steampowered.com/app/1426300/The_Binding_of_Isaac_Repentance/)_, written in [TypeScript](https://www.typescriptlang.org/) using the [IsaacScript](https://isaacscript.github.io/) framework.
+![Astra Mod](https://steamuserimages-a.akamaihd.net/ugc/1724297524959178133/D8F505A0D489E7674D75D61FDD0C0204F786FAA6/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true)
+
+Astra is a mod for _[The Binding of Isaac: Repentance](https://store.steampowered.com/app/1426300/The_Binding_of_Isaac_Repentance/)_, written in [TypeScript](https://www.typescriptlang.org/) using the [IsaacScript](https://isaacscript.github.io/) framework.
 
 ## How To Play
 
-For normal people, you can play the mod by subscribing to it on [the Steam Workshop](https://steamcommunity.com/app/250900/workshop/). (Subscribing to the mod will automatically download and install it once you launch the game.)
+[Steam Workshop Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2520973701)
 
 ### How To Compile
 

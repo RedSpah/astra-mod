@@ -1,4 +1,4 @@
-import { Collectibles } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/Collectibles";
 import { Costumes } from "../../enums/Costumes";
 import { Globals } from "../../enums/Globals";
 import { getOrDefault } from "../../helpers";
@@ -8,7 +8,7 @@ import { ConfusionData, ConfusionVolatileData, locals, saved } from "./variables
 export function ConfusionRender(player: EntityPlayer, _: Vector): void {
   const playerHash = GetPtrHash(player);
 
-  if (player.HasCollectible(Collectibles.CONFUSION)) {
+  if (player.HasCollectible(CollectibleCustom.CONFUSION)) {
     // Variables
 
     const conf = getOrDefault(saved.run.conf, playerHash, ConfusionData);

@@ -1,6 +1,6 @@
 import { ActiveSlot, ButtonAction, CollectibleType, EffectVariant, EntityType, InputHook, ModCallback, PlayerItemAnimation, SoundEffect, UseFlag } from "isaac-typescript-definitions";
 import { getPlayers, hasFlag, spawn } from "isaacscript-common";
-import { Collectibles } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/Collectibles";
 import { Globals } from "../enums/Globals";
 import { getFireVector, getOrDefault } from "../helpers";
 import { mod } from "../mod";
@@ -58,14 +58,14 @@ export function blinkInit(): void {
   mod.saveDataManagerRegisterClass(BlinkData);
   mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, BlinkProcess);
   mod.AddCallback(ModCallback.POST_RENDER, Blink60FPSProcess);
-  mod.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, Collectibles.BLINK);
+  mod.AddCallback(ModCallback.PRE_USE_ITEM, BlinkUse, CollectibleCustom.BLINK);
   mod.AddCallback(ModCallback.INPUT_ACTION, BlinkUseInputBlock);
 }
 
 function BlinkProcess(player: EntityPlayer) {
   const playerHash = GetPtrHash(player);
 
-  if (player.HasCollectible(Collectibles.BLINK)) {
+  if (player.HasCollectible(CollectibleCustom.BLINK)) {
     const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
 
     if (blink.InUse) {
@@ -134,7 +134,7 @@ function BlinkUse(_: CollectibleType, __: RNG, player: EntityPlayer, useFlags: B
         blink.AimReticulePos = player.Position;
         blink.AimReticuleVelocity = Vector(0, 0);
         local.AimReticule.Visible = true;
-        player.AnimateCollectible(Collectibles.BLINK, PlayerItemAnimation.LIFT_ITEM);
+        player.AnimateCollectible(CollectibleCustom.BLINK, PlayerItemAnimation.LIFT_ITEM);
 
         blink.InUse = true;
         blink.ButtonLock = true;
@@ -170,7 +170,7 @@ function Blink60FPSProcess() {
     for (const player of getPlayers()) {
       const playerHash = GetPtrHash(player);
 
-      if (player.HasCollectible(Collectibles.BLINK)) {
+      if (player.HasCollectible(CollectibleCustom.BLINK)) {
         const blink = getOrDefault(saved.run.conf, playerHash, BlinkData);
         const local = getOrDefault(locals, playerHash, BlinkVolatileData);
         if (blink.InUse) {

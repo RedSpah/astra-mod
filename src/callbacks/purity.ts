@@ -1,9 +1,9 @@
 import { ActiveSlot, CacheFlag, CollectibleType, EntityType, ModCallback, RoomType, SoundEffect } from "isaac-typescript-definitions";
-import { addFlag, getPlayerCollectibleCount, getPlayers, ModCallbackCustom, PickingUpItem } from "isaacscript-common";
+import { getPlayerCollectibleCount, getPlayers, ModCallbackCustom, PickingUpItem } from "isaacscript-common";
 import { AstraStats } from "../enums/AstraStats";
-import { Collectibles } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/Collectibles";
 import { Costumes } from "../enums/Costumes";
-import { PlayerTypes } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypes";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
 
@@ -45,11 +45,11 @@ export function purityInit(): void {
   mod.AddCallbackCustom(ModCallbackCustom.POST_NEW_ROOM_EARLY, PurityNewRoom);
   mod.AddCallbackCustom(ModCallbackCustom.POST_ITEM_PICKUP, PurityNewItem);
   mod.AddCallback(ModCallback.PRE_PICKUP_COLLISION, PurityDevilDeal);
-  mod.AddCallback(ModCallback.EVALUATE_CACHE, PurityEvaluateCache, addFlag(CacheFlag.DAMAGE, CacheFlag.TEAR_COLOR));
+  mod.AddCallback(ModCallback.EVALUATE_CACHE, PurityEvaluateCache);
 }
 
 function PurityEvaluateCache(player: EntityPlayer, cacheFlag: CacheFlag) {
-  if (player.GetPlayerType() === PlayerTypes.ASTRA) {
+  if (player.GetPlayerType() === PlayerTypeCustom.ASTRA) {
     const playerHash = GetPtrHash(player);
 
     const purity = getOrDefault(saved.run.purity, playerHash, PurityData);
@@ -85,7 +85,7 @@ function PurityEvaluateCache(player: EntityPlayer, cacheFlag: CacheFlag) {
 }
 
 function PurityNewItem(player: EntityPlayer, _: PickingUpItem) {
-  if (player.GetPlayerType() === PlayerTypes.ASTRA) {
+  if (player.GetPlayerType() === PlayerTypeCustom.ASTRA) {
     const playerHash = GetPtrHash(player);
 
     const purity = getOrDefault(saved.run.purity, playerHash, PurityData);
@@ -94,8 +94,8 @@ function PurityNewItem(player: EntityPlayer, _: PickingUpItem) {
 
     if (purity.PurityBrokenQueued) {
       purity.PurityBrokenQueued = false;
-      player.RemoveCollectible(Collectibles.CONFUSION);
-      player.SetPocketActiveItem(Collectibles.FRUSTRATION, ActiveSlot.POCKET, false);
+      player.RemoveCollectible(CollectibleCustom.CONFUSION);
+      player.SetPocketActiveItem(CollectibleCustom.FRUSTRATION, ActiveSlot.POCKET, false);
       player.AddNullCostume(Costumes.ASTRA_DEVIL);
       player.TryRemoveNullCostume(Costumes.ASTRA_CRY);
     }
@@ -109,7 +109,7 @@ function PurityNewItem(player: EntityPlayer, _: PickingUpItem) {
 
 function PurityNewRoom() {
   for (const player of getPlayers()) {
-    if (player.GetPlayerType() === PlayerTypes.ASTRA) {
+    if (player.GetPlayerType() === PlayerTypeCustom.ASTRA) {
       const playerHash = GetPtrHash(player);
 
       const purity = getOrDefault(saved.run.purity, playerHash, PurityData);
@@ -152,7 +152,7 @@ function PurityNewRoom() {
 }
 
 function PurityDevilDeal(pickup: EntityPickup, collider: Entity, _: boolean) {
-  if (collider.Type === EntityType.PLAYER && collider.ToPlayer()?.GetPlayerType() === PlayerTypes.ASTRA && pickup.IsShopItem()) {
+  if (collider.Type === EntityType.PLAYER && collider.ToPlayer()?.GetPlayerType() === PlayerTypeCustom.ASTRA && pickup.IsShopItem()) {
     const player = collider.ToPlayer();
     if (player !== undefined) {
       const playerHash = GetPtrHash(player);

@@ -1,9 +1,10 @@
 import { EffectVariant, EntityType } from "isaac-typescript-definitions";
 import { getKnives, getPlayers, spawn } from "isaacscript-common";
 
-import { Collectibles } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/Collectibles";
 import { Globals } from "../../enums/Globals";
 import { getOrDefault } from "../../helpers";
+import { modRNG } from "../../mod";
 import { DoomDesireConstants as Constants } from "./constants";
 import { DoomDesireData, DoomDesireVolatileData, locals, ManualKnifeData, saved } from "./variables";
 
@@ -12,10 +13,22 @@ export function DoomDesire60FPSProcess(): void {
     for (const player of getPlayers()) {
       const playerHash = GetPtrHash(player);
 
-      if (player.HasCollectible(Collectibles.DOOM_DESIRE)) {
+      if (player.HasCollectible(CollectibleCustom.DOOM_DESIRE)) {
         // Variable setup
         const dd = getOrDefault(saved.run.conf, playerHash, DoomDesireData);
         const local = getOrDefault(locals, playerHash, DoomDesireVolatileData);
+
+        if (Game().GetFrameCount() % 12 === 0 && !Game().IsPaused()) {
+          const REmber = spawn(
+            EntityType.EFFECT,
+            EffectVariant.EMBER_PARTICLE,
+            modRNG.RandomInt(2),
+            Vector(player.Position.X + modRNG.RandomInt(50) - 25, player.Position.Y + modRNG.RandomInt(50) - 25),
+            Vector(0, -modRNG.RandomFloat() * 2 - 1)
+          );
+          // Ember.ToEffect()?.SetTimeout(20);
+          REmber.SetColor(Color(1, 0, 0, 1, 0, 0, 0), Globals.INFINITY, Globals.COLOR_PRIORITY);
+        }
 
         local.refreshCrack();
         if (local.Crack !== undefined) {

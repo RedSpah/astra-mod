@@ -1,11 +1,11 @@
 <AnimatedActor>
-	<Info CreatedBy="robot" CreatedOn="19-Jun-21 1:07:34 PM" Version="116" Fps="30"/>
+	<Info CreatedBy="robot" CreatedOn="16/10/2022 13:16:07" Version="117" Fps="30"/>
 	<Content>
 		<Spritesheets>
 			<Spritesheet Path="costumes\confusioncharge5.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
-			<Layer Name="head4" Id="0" SpritesheetId="0"/>
+			<Layer Name="head3" Id="0" SpritesheetId="0"/>
 		</Layers>
 		<Nulls/>
 		<Events/>

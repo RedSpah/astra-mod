@@ -1,6 +1,6 @@
-<items gfxroot="gfx/items/" version="1">
-	<passive cache="firedelay" description="Brainpower!" gfx="confusion2.png" name="Confusion" />
-	<passive cache="" description="Wish of destruction" gfx="doom desire.png" name="Doom Desire" />
-	<active cache="" description="Once here, once there" gfx="blink2.png" name="Blink" maxcharges="150" chargetype="timed" />
-	<active cache="" description="Powerless, aimless" gfx="frustration.png" name="Frustration" maxcharges="60" chargetype="timed"/>
+<items gfxroot="gfx/items/" version="1"  deathanm2="gfx/death items.anm2">
+	<passive id="1" cache="firedelay" description="Brainpower!" gfx="collectible_confusion.png" name="Confusion" quality="3"/>
+	<passive id="2" cache="" description="Wish of destruction" gfx="collectible_doom_desire.png" name="Doom Desire" quality="4"/>
+	<active id="3" cache="" description="Once here, once there" gfx="collectible_blink.png" name="Blink" maxcharges="150" chargetype="timed" quality="1"/>
+	<active id="4" cache="" description="Powerless, aimless" gfx="collectible_frustration.png" name="Frustration" maxcharges="60" chargetype="timed" quality="0"/>
 </items>

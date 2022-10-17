@@ -1,7 +1,7 @@
 <costumes anm2root="gfx/characters/">
 	<costume anm2path="character_red001_astrahead.anm2" type="none"  />
 	<costume anm2path="character_red001x_tastrahead.anm2" type="none"  />
-	<costume anm2path="character_red001_astrasidehair.anm2" type="none"  />
+	<costume anm2path="character_red001_astrasidehair.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001x_tastrasidehair.anm2" type="none" />
 	<costume anm2path="character_red001_astrahorns.anm2" type="none"  />
 	<costume anm2path="character_red001x_tastrahorns.anm2" type="none"  />	
@@ -10,7 +10,17 @@
 	<costume anm2path="character_red001_astrahairfull_shiny.anm2" type="none" priority="101" />
 	<costume anm2path="character_red001x_tastrahairfull_shiny.anm2" type="none" priority="101" />
 	<costume anm2path="character_red001_astraheadonelayer.anm2" type="none" priority="99" />
+	<costume anm2path="character_red001_astraheadonelayer_shiny.anm2" type="none" priority="101" />
+	
 	<costume anm2path="character_red001x_tastraheadonelayer.anm2" type="none" priority="99" />
+	<costume anm2path="character_red001x_tastraheadonelayer_shiny.anm2" type="none" priority="101" />
+	
+	<costume anm2path="character_red001_astrabody.anm2" type="none" />
+	<costume anm2path="character_red001_astrabody_shiny.anm2" type="none" priority="49" />
+	<costume anm2path="character_red001x_tastrabody.anm2" type="none" />
+	<costume anm2path="character_red001x_tastrabody_shiny.anm2" type="none" priority="49" />
+	
+	<costume anm2path="confusion_costume.anm2" type="passive" id="1"  />
 	<costume anm2path="confusion_charge1.anm2" type="none"  />
 	<costume anm2path="confusion_charge2.anm2" type="none"  />
 	<costume anm2path="confusion_charge3.anm2" type="none"  />

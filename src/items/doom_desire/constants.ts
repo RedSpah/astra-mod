@@ -4,8 +4,8 @@ export const DoomDesireConstants = {
   // Charge
   MaxTimerBase: 50,
   MaxTimerRangeMul: -0.5,
-  CDBase: 50,
-  CDFireDelayMul: 5,
+  CDBase: 55,
+  CDFireDelayMul: 2,
   StillExtraTimer: 3,
 
   // Reticule
@@ -31,12 +31,13 @@ export const DoomDesireConstants = {
 
   // Fire
   FireShotSpeedMul: 7.5,
-  SizeSpreadMin: 0.8,
-  SizeSpreadMax: 2.3,
+  SizeSpreadMin: 2,
+  SizeSpreadMax: 9,
   BrimTimeoutMin: 9,
   BrimTimeoutMax: 18,
   KnifeTimeoutMin: 30,
   KnifeTimeoutMax: 50,
+  KnifeSpeedMul: 2.5,
   TearFallingSpeed: -18,
   TearFallingAcceleration: 2,
   ShotBaseColor: Color(0, 0, 0, 1, 0.2, 0, 0),
@@ -51,4 +52,24 @@ export const DoomDesireConstants = {
   ChargeIconOffset: Vector(28, -35)
 } as const;
 
-export const DoomDesireBoomyItemList = [CollectibleType.DR_FETUS, CollectibleType.EPIC_FETUS, CollectibleType.PURGATORY];
+export const DoomDesireBoomyItemList = [
+  CollectibleType.DR_FETUS,
+  CollectibleType.EPIC_FETUS,
+  CollectibleType.PURGATORY,
+  CollectibleType.VADE_RETRO,
+  CollectibleType.BOGO_BOMBS,
+  CollectibleType.HOT_BOMBS,
+  CollectibleType.SAD_BOMBS,
+  CollectibleType.BUTT_BOMBS,
+  CollectibleType.FAST_BOMBS,
+  CollectibleType.BLOOD_BOMBS,
+  CollectibleType.GHOST_BOMBS,
+  CollectibleType.SCATTER_BOMBS,
+  CollectibleType.BRIMSTONE_BOMBS,
+  CollectibleType.STICKY_BOMBS,
+  CollectibleType.NANCY_BOMBS,
+  CollectibleType.GLITTER_BOMBS,
+  CollectibleType.BOMBER_BOY,
+  CollectibleType.BOOM,
+  CollectibleType.PYRO
+];

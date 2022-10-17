@@ -1,6 +1,6 @@
 import { ActiveSlot, CollectibleType, ModCallback, SoundEffect, UseFlag } from "isaac-typescript-definitions";
 import { hasFlag } from "isaacscript-common";
-import { Collectibles } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/Collectibles";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
 
@@ -24,7 +24,7 @@ export function frustrationInit(): void {
   mod.saveDataManager("astra.frustration", saved);
   mod.saveDataManagerRegisterClass(FrustrationData);
   mod.AddCallback(ModCallback.POST_PEFFECT_UPDATE, FrustrationProcess);
-  mod.AddCallback(ModCallback.PRE_USE_ITEM, FrustrationUse, Collectibles.FRUSTRATION);
+  mod.AddCallback(ModCallback.PRE_USE_ITEM, FrustrationUse, CollectibleCustom.FRUSTRATION);
 }
 
 function FrustrationProcess(player: EntityPlayer) {

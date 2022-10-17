@@ -1,6 +1,6 @@
 import { CacheFlag, DamageFlag, Direction, EffectVariant, EntityPartition, EntityType, SoundEffect, TearFlag } from "isaac-typescript-definitions";
 import { addFlag, hasFlag, spawn } from "isaacscript-common";
-import { Collectibles } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/Collectibles";
 import { getOrDefault } from "../../helpers";
 import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";
@@ -8,14 +8,14 @@ import { ConfusionData, saved } from "./variables";
 export function ConfusionCharge(player: EntityPlayer): void {
   const playerHash = GetPtrHash(player);
 
-  if (player.HasCollectible(Collectibles.CONFUSION)) {
+  if (player.HasCollectible(CollectibleCustom.CONFUSION)) {
     // Variable setup
     const conf = getOrDefault(saved.run.conf, playerHash, ConfusionData);
 
     // Setting pseudo consts
     conf.MaxTimer =
       conf.Timer === 0 ? Constants.ChargeTimeBase + Constants.ChargeTimeFireDelayMul * player.MaxFireDelay : Constants.ChargeTimeBase + Constants.ChargeTimeFireDelayMul * conf.FireDelayCached;
-    conf.OuterRange = Constants.OuterRangeMul * player.TearHeight;
+    conf.OuterRange = Constants.OuterRangeMul * player.TearHeight + Constants.OuterRangeBase;
     conf.InnerRange = conf.OuterRange * Constants.InnerRangeMul;
     conf.Timer = math.min(conf.Timer, conf.MaxTimer);
 
