@@ -1,4 +1,4 @@
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { Costumes } from "../../enums/Costumes";
 import { Globals } from "../../enums/Globals";
 import { getOrDefault } from "../../helpers";

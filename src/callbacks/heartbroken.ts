@@ -1,6 +1,6 @@
 import { HeartSubType, ModCallback, PickupVariant, PlayerVariant } from "isaac-typescript-definitions";
 import { ModCallbackCustom } from "isaacscript-common";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
 

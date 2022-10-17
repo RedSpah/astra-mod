@@ -1,7 +1,7 @@
 import { EffectVariant, EntityType } from "isaac-typescript-definitions";
 import { getKnives, getPlayers, spawn } from "isaacscript-common";
 
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { Globals } from "../../enums/Globals";
 import { getOrDefault } from "../../helpers";
 import { modRNG } from "../../mod";

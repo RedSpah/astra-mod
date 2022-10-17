@@ -1,6 +1,6 @@
 import { CollectibleType, EffectVariant, EntityType, ModCallback, PickupVariant, RoomType } from "isaac-typescript-definitions";
 import { getPlayers, spawn } from "isaacscript-common";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { mod } from "../mod";
 
 export function impurityInit(): void {

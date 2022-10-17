@@ -1,7 +1,7 @@
 import { Direction, EffectVariant, EntityType, ModCallback, PlayerVariant } from "isaac-typescript-definitions";
 import { spawn } from "isaacscript-common";
 import { Globals } from "../enums/Globals";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { mod, modRNG } from "../mod";
 
 export function tAstraDripInit(): void {

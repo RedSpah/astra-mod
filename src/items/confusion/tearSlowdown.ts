@@ -1,5 +1,5 @@
 import { CacheFlag } from "isaac-typescript-definitions";
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { getOrDefault } from "../../helpers";
 import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";

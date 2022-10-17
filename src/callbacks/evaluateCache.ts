@@ -1,7 +1,7 @@
 import { CacheFlag, ModCallback } from "isaac-typescript-definitions";
 import { addFlag } from "isaacscript-common";
 import { AstraBStats, AstraStats } from "../enums/AstraStats";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { mod } from "../mod";
 
 export function evaluateCacheInit(): void {

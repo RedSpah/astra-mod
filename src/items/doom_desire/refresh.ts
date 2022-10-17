@@ -1,7 +1,7 @@
 import { getPlayers } from "isaacscript-common";
 
-import { CollectibleCustom } from "../../enums/Collectibles";
-import { PlayerTypeCustom } from "../../enums/PlayerTypes";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
+import { PlayerTypeCustom } from "../../enums/PlayerTypeCustom";
 import { getOrDefault } from "../../helpers";
 import { DoomDesireData, saved } from "./variables";
 

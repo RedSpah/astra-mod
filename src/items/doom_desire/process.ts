@@ -1,9 +1,9 @@
 import { CollectibleType, EffectVariant, EntityType, LaserOffset, LaserVariant, SoundEffect, WeaponType } from "isaac-typescript-definitions";
 import { getPlayerCollectibleCount, playerHasCollectible, spawn, spawnKnife, spawnLaser } from "isaacscript-common";
 
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { Globals } from "../../enums/Globals";
-import { PlayerTypeCustom } from "../../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../../enums/PlayerTypeCustom";
 import { getApproxNumTears, getFireVector, getOrDefault, rollRange } from "../../helpers";
 import { DoomDesireBoomyItemList, DoomDesireConstants as Constants } from "./constants";
 

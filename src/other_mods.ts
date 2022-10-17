@@ -1,5 +1,5 @@
-import { CollectibleCustom } from "./enums/Collectibles";
-import { PlayerTypeCustom } from "./enums/PlayerTypes";
+import { CollectibleCustom } from "./enums/CollectibleCustom";
+import { PlayerTypeCustom } from "./enums/PlayerTypeCustom";
 
 export function initOtherMods(): void {
   if (EID !== undefined) {

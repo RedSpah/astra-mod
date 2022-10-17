@@ -1,9 +1,9 @@
 import { ActiveSlot, EffectVariant, EntityType, PlayerVariant } from "isaac-typescript-definitions";
 import { ModCallbackCustom } from "isaacscript-common";
-import { CollectibleCustom } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/CollectibleCustom";
 import { Costumes } from "../enums/Costumes";
 import { Globals } from "../enums/Globals";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { mod, modRNG } from "../mod";
 import { evaluateCacheInit } from "./evaluateCache";
 import { heartbrokenInit } from "./heartbroken";

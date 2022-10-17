@@ -1,4 +1,4 @@
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { getOrDefault } from "../../helpers";
 import { DoomDesireConstants as Constants } from "./constants";
 import { DoomDesireData, DoomDesireVolatileData, locals, saved } from "./variables";

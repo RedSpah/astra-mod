@@ -1,6 +1,6 @@
 import { CacheFlag, DamageFlag, Direction, EffectVariant, EntityPartition, EntityType, SoundEffect, TearFlag } from "isaac-typescript-definitions";
 import { addFlag, hasFlag, spawn } from "isaacscript-common";
-import { CollectibleCustom } from "../../enums/Collectibles";
+import { CollectibleCustom } from "../../enums/CollectibleCustom";
 import { getOrDefault } from "../../helpers";
 import { ConfusionConstants as Constants } from "./constants";
 import { ConfusionData, saved } from "./variables";

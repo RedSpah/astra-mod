@@ -1,6 +1,6 @@
 import { ActiveSlot, ButtonAction, CollectibleType, EffectVariant, EntityType, InputHook, ModCallback, PlayerItemAnimation, SoundEffect, UseFlag } from "isaac-typescript-definitions";
 import { getPlayers, hasFlag, spawn } from "isaacscript-common";
-import { CollectibleCustom } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/CollectibleCustom";
 import { Globals } from "../enums/Globals";
 import { getFireVector, getOrDefault } from "../helpers";
 import { mod } from "../mod";

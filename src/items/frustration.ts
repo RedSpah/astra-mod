@@ -1,6 +1,6 @@
 import { ActiveSlot, CollectibleType, ModCallback, SoundEffect, UseFlag } from "isaac-typescript-definitions";
 import { hasFlag } from "isaacscript-common";
-import { CollectibleCustom } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/CollectibleCustom";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
 

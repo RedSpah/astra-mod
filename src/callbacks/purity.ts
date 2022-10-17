@@ -1,9 +1,9 @@
 import { ActiveSlot, CacheFlag, CollectibleType, EntityType, ModCallback, RoomType, SoundEffect } from "isaac-typescript-definitions";
 import { getPlayerCollectibleCount, getPlayers, ModCallbackCustom, PickingUpItem } from "isaacscript-common";
 import { AstraStats } from "../enums/AstraStats";
-import { CollectibleCustom } from "../enums/Collectibles";
+import { CollectibleCustom } from "../enums/CollectibleCustom";
 import { Costumes } from "../enums/Costumes";
-import { PlayerTypeCustom } from "../enums/PlayerTypes";
+import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
 
