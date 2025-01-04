@@ -44,3 +44,19 @@ export function getApproxNumTears(player: EntityPlayer): number {
 export function rollRange(min: number, max: number, rng: RNG = RNG()): number {
   return min + rng.RandomFloat() * (max - min);
 }
+
+export function getAnimLen(sprite: Sprite, anim: string): number {
+  const curFrame = sprite.GetFrame();
+  const curAnim = sprite.GetAnimation();
+
+  let last = 0;
+
+  sprite.SetAnimation(anim);
+  sprite.SetLastFrame();
+  last = sprite.GetFrame();
+
+  sprite.SetAnimation(curAnim);
+  sprite.SetFrame(curFrame);
+
+  return last;
+}

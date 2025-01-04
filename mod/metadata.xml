@@ -3,7 +3,7 @@
     <name>Astra Mod 2.0</name>
     <directory>astramod</directory>
     <id>2520973701</id>
-    <description>Introducing Astra, a child from a far distant world.
+    <description>Introducing Astra, a child from a distant world.
 
 Repentance support only.
 
@@ -18,13 +18,22 @@ Adds two new characters:
 
 Her psychic powers let her keep her enemies at bay and briefly stun them upon fully charging, with her Blink letting her access normally inaccessible locations. Stay far from the influence of evil however, as her gifts are only for the pure of heart...
 
+Starting items:
+
+* [b]Confusion[/b]: Chargeable AoE attack that deals heavy damage, stuns and knocks back nearby enemies once released.
+
+* [b]Blink[/b]: Local (in-room) teleport, usable as a flight substitute, or to evade nearby enemies.
+
+
 
 [h1]* Tainted Astra - The Fiend[/h1]
 
 Having her heart broken by the dark, she receives drastically reduced healing from heart drops, and her mere sight draws the wrath of heaven's messengers. Her corruption did not come without a boon though, as now her mind only dreams of destruction, bringing it to the decrepit world around her...
 
-</description>
-    <version>2.0</version>
+Starting items:
+
+* [b]Doom Desire[/b]: Geyser of tears whose position can be controlled similarly to Epic Fetus.</description>
+    <version>2.1</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Items"/>

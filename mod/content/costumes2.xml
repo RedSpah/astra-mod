@@ -4,22 +4,42 @@
 	<costume anm2path="character_red001_astrasidehair.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001x_tastrasidehair.anm2" type="none" />
 	<costume anm2path="character_red001_astrahorns.anm2" type="none"  />
-	<costume anm2path="character_red001x_tastrahorns.anm2" type="none"  />	
+	<costume anm2path="character_red001x_tastrahorns.anm2" type="none"  />
 	<costume anm2path="character_red001_astrahairfull.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001x_tastrahairfull.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001_astrahairfull_shiny.anm2" type="none" priority="101" />
 	<costume anm2path="character_red001x_tastrahairfull_shiny.anm2" type="none" priority="101" />
 	<costume anm2path="character_red001_astraheadonelayer.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001_astraheadonelayer_shiny.anm2" type="none" priority="101" />
-	
+
 	<costume anm2path="character_red001x_tastraheadonelayer.anm2" type="none" priority="99" />
 	<costume anm2path="character_red001x_tastraheadonelayer_shiny.anm2" type="none" priority="101" />
-	
+
 	<costume anm2path="character_red001_astrabody.anm2" type="none" />
-	<costume anm2path="character_red001_astrabody_shiny.anm2" type="none" priority="49" />
+	<costume anm2path="character_red001_astrabody_shiny.anm2" type="none" priority="49"  hasSkinAlt="true" />
 	<costume anm2path="character_red001x_tastrabody.anm2" type="none" />
-	<costume anm2path="character_red001x_tastrabody_shiny.anm2" type="none" priority="49" />
-	
+	<costume anm2path="character_red001x_tastrabody_shiny.anm2" type="none" priority="49"  hasSkinAlt="true" />
+
+	<costume anm2path="character_red002_danielears.anm2" type="none" priority="99" hasSkinAlt="true" />
+	<costume anm2path="character_red002_danielmane.anm2" type="none" priority="99" />
+	<costume anm2path="character_red002_danielears_shiny.anm2" type="none" priority="101" />
+	<costume anm2path="character_red002_danielmane_shiny.anm2" type="none" priority="49" />
+	<costume anm2path="character_red002_danielhead_shiny.anm2" type="none" priority="101" />
+
+	<costume anm2path="character_red002x_tdanielears.anm2" type="none" priority="98" hasSkinAlt="true" />
+	<costume anm2path="character_red002x_tdanielmane.anm2" type="none" priority="48" hasSkinAlt="true" />
+	<costume anm2path="character_red002x_tdanielears_shiny.anm2" type="none" priority="98" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielmane_shiny.anm2" type="none" priority="48" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielhead_shiny.anm2" type="none" priority="98" hasSkinAlt="false" />
+
+	<costume anm2path="character_red002x_tdanielears_spirit.anm2" type="none" priority="99" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielmane_spirit.anm2" type="none" priority="49" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielhead_spirit.anm2" type="none" priority="99" hasSkinAlt="false" />
+
+	<costume anm2path="character_red002x_tdanielears_spirit_shiny.anm2" type="none" priority="99" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielmane_spirit_shiny.anm2" type="none" priority="49" hasSkinAlt="false" />
+	<costume anm2path="character_red002x_tdanielhead_spirit_shiny.anm2" type="none" priority="99" hasSkinAlt="false" />
+
 	<costume anm2path="confusion_costume.anm2" type="passive" id="1"  />
 	<costume anm2path="confusion_charge1.anm2" type="none"  />
 	<costume anm2path="confusion_charge2.anm2" type="none"  />
@@ -28,10 +48,10 @@
 	<costume anm2path="confusion_charge5.anm2" type="none"  />
 	<costume anm2path="confusion_charge6.anm2" type="none"  />
 	<costume anm2path="confusion_charge7.anm2" type="none"  />
-	<costume anm2path="confusion_charge8.anm2" type="none"  />	
-	<costume anm2path="costume_astra_devil.anm2" type="none"  />
-	<costume anm2path="costume_astra_cry.anm2" type="none"  />
-	<costume anm2path="costume_astra_cry2.anm2" type="none"  />
-	<costume anm2path="costume_astra_happy.anm2" type="none"  />
-	<costume anm2path="costume_astra_planetarium.anm2" type="none"  />
+	<costume anm2path="confusion_charge8.anm2" type="none"  />
+	<costume anm2path="costume_astra_devil.anm2" type="none"  hasSkinAlt="true"  />
+	<costume anm2path="costume_astra_cry.anm2" type="none"  hasSkinAlt="true" />
+	<costume anm2path="costume_astra_cry2.anm2" type="none"  hasSkinAlt="true" />
+	<costume anm2path="costume_astra_happy.anm2" type="none"  hasSkinAlt="true"  />
+	<costume anm2path="costume_astra_planetarium.anm2" type="none"  hasSkinAlt="true" />
 </costumes>

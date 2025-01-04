@@ -114,6 +114,7 @@ tainted:
 * [x] Moon Baby
 * [x] Hypno's Pendulum
 * [x] Life Orb
+* [] redo Latias Mask item sprite
 === Other Sprites:
 * [] Unlock Screens
 * [] Item inventory sprites
@@ -121,14 +122,11 @@ tainted:
 * [] Assorted sprites for the items
 * [] Costumes for missing Repentance items
 * [] Shiny Costumes in case I want to kashoot myself
-=== Coding Items:
-* [x] Confusion Rework (ETA: Medium)
-* [x] Blink Polish (ETA: Low)
-* [x] Doom Desire Rework (ETA: High)
-* [x] Frustration Polish (ETA: Low)
+=== Coding Things:
+* [] Tainted Daniel Haunted + Tarnished Locket (ETA: High)
 * [] Cleanse Tag (ETA: Low)
 * [] Soothe Bell (ETA: Very Low)
-* [] Resolve of Purity (ETA: Low)
+* [] Purity's Resolve (ETA: Low)
 * [] Air Balloon (ETA: Low)
 * [] Choice Scarf (ETA: Low)
 * [] Soul of Astra (ETA: Very Low)
@@ -143,8 +141,69 @@ tainted:
 * [] Hypno's Pendulum (ETA: High)
 * [] Moon Baby (ETA: Medium)
 * [] Life Orb (ETA: Low)
+* [] Dream Eater (ETA: Medium)
+* [] Wishmaker Pendant (ETA: Low)
+* [] Psionic Persuation (ETA: High)
 === Other Coding:
 * [x] Astra Purity Polish (ETA: Low)
 * [x] TAstra Heartbroken Polish / Rework (ETA: Medium)
 * [] Wiring Unlocks together (ETA: Medium)
 * [x] Cross-mod compatibility, Pog, Ugh, EID, Encyclopedia, Rune thing in community pack (ETA: High)
+
+
+--------------------
+
+Daniel | The Skittish
+
+appearance: a normal hypno, maybe slightly beat up
+starting stats: above average survivability and luck, very low offensive stats
+starting items:
+
+* Hypno's Pendulum
+"Also doubles as a bludgeon"
+familiar that can be swung around the player, applying light damage and several possible status effects for affected targets. for Daniel, always Charms normal enemies, sometimes permanently, and always stuns bosses
+
+* Psionic Persuation
+"You wish you didn't have to"
+Active item, long recharge: when used in the shop room, a devil deal room, or in a room containing an interactable object that may give rewards (slot machine, beggar, etc), has a high chance to either make them pay out instantly or greatly reduce the prices / make certain items free, average chance to do nothing, or a low chance to turn them hostile or otherwise destroy them
+
+
+
+Tainted Daniel | The Spurned
+
+appearance: a gruesomely wounded hypno (uncertain to what extent, but at least has something like almost half his face missing / burned off)
+starting stats: low offensive stats, medium life
+
+(a lot of gameplay details I'm undecided on yet)
+
+innate: when tainted daniel gets hit, he turns into a furious spirit, gaining extremely high offensive stats, spectral tears and flight but is only two hits away from death (whether this happens can be toggled), picking up a heart turns him back into regular self
+
+* maybe there's a timer before you can turn into spirit again?
+* maybe have the spirit's health not regen every time you turn back into regular form, you just get X health per floor and you can't increase it by any means once you take a hit
+* some other drawbacks to being in spirit form? maybe unable to pick up items
+
+he also gets fewer heart drops
+
+starting items:
+
+* Wishmaker Pendant
+"It's just cheap plastic"
+Active item, 2 room charge
+as normal tainted daniel (and all other characters): consumes a half heart, spawns a random non-heart pickup
+as spirit form: consumes one coin, one bomb, one key, spawns  a heart pickup
+
+* Dream Eater
+"Cannibalize your mind"
+Passive
+at the beginning of a new floor, if you have at least one soul heart, its eaten and you get a small permanent damage up
+this effect is doubled for XL floors and floors with curses, increases the chance of cursed floors
+
+
+SOUND - 491 / FORTUNE COOKIE FOR NOM + 157 / SOUND_VAMP_GULP FOR SWALLOW
+
+
+
+* Tarnished Locket
+"Remember me"
+Active, 0 charge
+tainted daniel starts with this item in his pocket slot, it's otherwise unobtainable- lets the player switch between taking damage activating the "turn into spirit form" effect or not

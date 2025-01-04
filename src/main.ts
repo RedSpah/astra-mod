@@ -10,5 +10,5 @@ export function main(): void {
   initCallbacks();
   initItems();
 
-  printConsole(`Astra Mod Loaded v${MOD_VER}.`);
+  printConsole(`Astra Mod v${MOD_VER} Loaded.`);
 }

@@ -1,0 +1,5 @@
+<pocketitems>
+  <rune type="rune" pickup="4001" description="Something Mega" id="1" name="Soul of Astra" hud="SoulAstra" mimiccharge="12" />
+  <card type="special" pickup="4002" description="Discard your hand and draw seven" id="2" name="Professor's Research" hud="Research" mimiccharge="6" />
+  <rune type="rune" pickup="4003" description="Their love is yours" id="3" name="Soul of Daniel" hud="SoulDaniel" mimiccharge="12" />
+</pocketitems>

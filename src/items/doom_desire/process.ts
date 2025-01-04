@@ -11,7 +11,7 @@ import { DoomDesireData, DoomDesireVolatileData, locals, ManualKnifeData, saved 
 
 export function DoomDesireProcess(player: EntityPlayer): void {
   const playerHash = GetPtrHash(player);
-  if (player.HasCollectible(CollectibleCustom.DOOM_DESIRE)) {
+  if (player.HasCollectible(CollectibleCustom.DOOM_DESIRE) || player.GetPlayerType() === PlayerTypeCustom.ASTRA_B) {
     // Variable setup
     const dd = getOrDefault(saved.run.conf, playerHash, DoomDesireData);
     const local = getOrDefault(locals, playerHash, DoomDesireVolatileData);

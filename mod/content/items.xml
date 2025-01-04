@@ -1,6 +1,28 @@
 <items gfxroot="gfx/items/" version="1"  deathanm2="gfx/death items.anm2">
-	<passive id="1" cache="firedelay" description="Brainpower!" gfx="collectible_confusion.png" name="Confusion" quality="3"/>
-	<passive id="2" cache="" description="Wish of destruction" gfx="collectible_doom_desire.png" name="Doom Desire" quality="4"/>
-	<active id="3" cache="" description="Once here, once there" gfx="collectible_blink.png" name="Blink" maxcharges="150" chargetype="timed" quality="1"/>
-	<active id="4" cache="" description="Powerless, aimless" gfx="collectible_frustration.png" name="Frustration" maxcharges="60" chargetype="timed" quality="0"/>
+	<passive id="1" cache="firedelay" description="Brainpower!" gfx="collectible_confusion.png" name="Confusion" craftquality="3" quality="3" tag="offensive summonable"/>
+	<passive id="2" cache="" description="Wish of destruction" gfx="collectible_doom_desire.png" name="Doom Desire" craftquality="4" quality="4" devilprice="2" tag="offensive summonable"/>
+	<active id="3" cache="" description="Once here, once there" gfx="collectible_blink.png" name="Blink" maxcharges="150" chargetype="timed" craftquality="1" quality="1"/>
+	<active id="4" cache="" description="Powerless, aimless" gfx="collectible_frustration.png" name="Frustration" maxcharges="60" chargetype="timed" craftquality="-1" quality="0" hidden="true" tag="noeden"/>
+	<passive id="5" cache="damage shotspeed" description="Painful to be near" gfx="collectible_heart_fin.png" name="Heart Fin" craftquality="3" quality="3" tag="offensive summonable"/>
+	<passive id="6" cache="flight speed" description="Torn off of its previous owner" gfx="collectible_latias_mask.png" name="Latias Mask" craftquality="4" quality="4" devilprice="2" tag="offensive summonable summonable"/>
+	<passive id="7" cache="" description="Stay back!" gfx="collectible_psychic.png" name="Psychic" craftquality="3" quality="3" tag="offensive summonable"/>
+	<familiar id="8" cache="familiars" description="Bloodless, and yet still full of hatred" gfx="collectible_witchs_braid.png" name="Witch's Braid" craftquality="2" quality="2" devilprice="1" tag="monstermanual offensive"/>
+	<active id="9" cache="" chargetype="normal"  maxcharges="3" description="Delayed blast" gfx="collectible_future_sight.png" name="Future Sight" craftquality="1" quality="1" tag="offensive"/>
+	<passive id="10" cache="" description="Goes well with Primeape" gfx="collectible_tapus_fin.png" name="Tapu's Fin" craftquality="3" quality="3" tag="offensive summonable"/>
+	<active id="11" cache="" chargetype="normal" maxcharges="2" description="Your legs are too short for this" gfx="collectible_triple_axel.png" name="Triple Axel" craftquality="2" quality="2" tag="offensive"/>
+	<active id="12" cache="" chargetype="normal" maxcharges="12" description="Hold on for a bit longer" gfx="collectible_wish.png" name="Wish" craftquality="3" quality="3" tag="nolostbr"/>
+	<familiar id="13" cache="familiars" description="Psychic/Fairy friend" gfx="collectible_moon_baby.png" name="Moon Baby" craftquality="1" quality="1" tag="monstermanual offensive"/>
+	<familiar id="14" cache="familiars" description="Also doubles as a bludgeon" gfx="collectible_hypnos_pendulum.png" name="Hypno's Pendulum" craftquality="2" quality="2" devilprice="1" tag="monstermanual offensive"/>
+	<passive id="15" cache="" description="Cannibalize your mind" gfx="collectible_dream_eater.png" name="Dream Eater" craftquality="2" quality="2" devilprice="1" tag="nolostbr nokeeper summonable"/>
+	<active id="16" cache="" chargetype="normal" maxcharges="2" description="It's just cheap plastic" gfx="collectible_wishmaker_pendant.png" name="Wishmaker Pendant" craftquality="1" quality="1" tag="nolostbr"/>
+	<active id="17" cache="" chargetype="normal" maxcharges="4" description="You wish you didn't have to" gfx="collectible_psionic_persuation.png" name="Psionic Persuasion" craftquality="3" quality="3" devilprice="2"  tag="offensive"/>
+	<active id="18" cache="" chargetype="normal" maxcharges="0" description="Remember me" gfx="collectible_tarnished_locket.png" name="Tarnished Locket   " quality="0" craftquality="-1" hidden="true" tag="noeden"/>
+	<active id="19" cache="" chargetype="normal" maxcharges="0" description="Remember me" gfx="collectible_tarnished_locket_closed.png" name="Tarnished Locket" quality="0" craftquality="-1" hidden="true" tag="noeden"/>
+
+	<trinket cache="flight" id="1" gfx="trinket_air_balloon.png" name="Air Balloon" description="Don't get hit" />
+	<trinket id="2" gfx="trinket_astras_resolve.png" name="Astra's Resolve" description="Let your soul not be swayed" />
+	<trinket cache="speed" id="3" gfx="trinket_choice_scarf.png" name="Choice Scarf" description="You feel fixated" />
+	<trinket id="4" gfx="trinket_cleanse_tag.png" name="Cleanse Tag" description="Repels wild creatures" />
+	<trinket cache="damage" id="5" gfx="trinket_life_orb.png" name="Life Orb" description="Hit hard, get hit hard" />
+	<trinket id="6" gfx="trinket_soothe_bell.png" name="Soothe Bell" description="The chime comforts you" />
 </items>

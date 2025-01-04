@@ -1,15 +1,29 @@
 <players bigportraitroot="gfx/ui/stage/" nameimageroot="gfx/ui/boss/" portraitroot="gfx/ui/boss/" root="gfx/characters/costumes/">
-	<player  name="Astra" skin="character_red001_astra.png" hp="4" armor="2" costume="13"
-          nameimage="playername_red001_astra.png" 
-          portrait="playerportrait_astra.png" 
+	<player name="Astra" skin="character_red001_astra.png" hp="4" armor="2" costume="13"
+          nameimage="playername_red001_astra.png"
+          portrait="playerportrait_astra.png"
 		  bigportrait="playerportrait_astra.png"
           skinColor="0"
 		  costumeSuffix="astra"
 		  birthright="Move Tutor (NOT IMPLEMENTED YET)" />
-	<player  name="Astra" skin="character_red001x_tastra.png" hp="2" armor="1" canShoot="false" bSkinParent="Astra" costume="13"
-          nameimage="playername_red001_astra.png" 
+	<player name="Astra" skin="character_red001x_tastra.png" hp="2" armor="1" canShoot="false" bSkinParent="Astra" costume="13"
+          nameimage="playername_red001_astra.png"
           portrait="playerportrait_astra_b.png" bigportrait="playerportrait_astra_b.png"
 		  skinColor="0"
 		  costumeSuffix="astrab"
 		  birthright="Forgiven" />
+	<player name="Daniel" skin="character_red002_daniel.png" hp="6" armor="2" keys="2"
+          nameimage="playername_red002_daniel.png"
+          portrait="playerportrait_daniel.png"
+		  bigportrait="playerportrait_daniel.png"
+          skinColor="-1"
+		  costumeSuffix="daniel"
+		  birthright="Better odds" />
+	<player name="Daniel" skin="character_red002x_tdaniel.png" hp="2" armor="4" bSkinParent="Daniel" bombs="1"
+          nameimage="playername_red002_daniel.png"
+          portrait="playerportrait_daniel_b.png" bigportrait="playerportrait_daniel_b.png"
+		  skinColor="-1"
+		  costumeSuffix="danielb"
+		  birthright="Forgiven" />
+
 </players>
