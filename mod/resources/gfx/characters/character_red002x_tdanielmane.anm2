@@ -1,11 +1,11 @@
 <AnimatedActor>
-	<Info CreatedBy="robot" CreatedOn="01/01/2023 21:14:17" Version="106" Fps="30"/>
+	<Info CreatedBy="robot" CreatedOn="05/01/2025 01:32:39" Version="107" Fps="30"/>
 	<Content>
 		<Spritesheets>
 			<Spritesheet Path="costumes\character_red002x_tdanielmane.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
-			<Layer Name="body" Id="0" SpritesheetId="0"/>
+			<Layer Name="body1" Id="0" SpritesheetId="0"/>
 		</Layers>
 		<Nulls/>
 		<Events/>

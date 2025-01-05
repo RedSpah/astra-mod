@@ -16,14 +16,14 @@
           nameimage="playername_red002_daniel.png"
           portrait="playerportrait_daniel.png"
 		  bigportrait="playerportrait_daniel.png"
-          skinColor="-1"
+          skinColor="0"
 		  costumeSuffix="daniel"
-		  birthright="Better odds" />
+		  birthright="Better odds" costume="13" />
 	<player name="Daniel" skin="character_red002x_tdaniel.png" hp="2" armor="4" bSkinParent="Daniel" bombs="1"
           nameimage="playername_red002_daniel.png"
           portrait="playerportrait_daniel_b.png" bigportrait="playerportrait_daniel_b.png"
-		  skinColor="-1"
+		  skinColor="0"
 		  costumeSuffix="danielb"
-		  birthright="Forgiven" />
+		  birthright="Forgiven"  costume="13"  />
 
 </players>

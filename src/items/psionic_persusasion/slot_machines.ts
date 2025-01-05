@@ -63,7 +63,7 @@ const FortuneAnimCycleKachow: string[] = ["Initiate", "Wiggle", "Prize", "Idle",
 const FortuneAnimCycle: string[] = ["Initiate", "Wiggle", "Prize", "Idle"];
 
 export function PsiPersuasionFortuneTellingMachine(entity: Entity, outcome: PsiPersuasionOutcome): void {
-  if (entity.GetSprite().GetAnimation() === "Broken") {
+  if (entity.GetSprite().GetAnimation() !== "Idle") {
     return;
   }
 
@@ -112,7 +112,7 @@ const BloodAnimCycleKachow: string[] = ["Initiate", "Wiggle", "Prize", "Idle", "
 const BloodAnimCycle: string[] = ["Initiate", "Wiggle", "Prize", "Idle"];
 
 export function PsiPersuasionBloodDonationMachine(entity: Entity, outcome: PsiPersuasionOutcome): void {
-  if (entity.GetSprite().GetAnimation() === "Broken") {
+  if (entity.GetSprite().GetAnimation() !== "Idle") {
     return;
   }
 
@@ -159,7 +159,7 @@ const CraneAnimCyclePostWin: string[] = ["Prize"];
 const CraneAnimCycleWin: string[] = ["Initiate", "Wiggle", "WiggleEnd"];
 
 export function PsiPersuasionCraneGame(entity: Entity, outcome: PsiPersuasionOutcome): void {
-  if (entity.GetSprite().GetAnimation() === "Broken") {
+  if (entity.GetSprite().GetAnimation() !== "Idle") {
     return;
   }
 
@@ -170,7 +170,10 @@ export function PsiPersuasionCraneGame(entity: Entity, outcome: PsiPersuasionOut
       entity.Remove();
       break;
     case PsiPersuasionOutcome.FAILURE:
-      Isaac.Explode(arg0.Position, undefined, 10);
+      SFXManager().Play(SoundEffect.COIN_SLOT, 1, 0, false, 1);
+      PsiPersuasionFakeAnimStart(entity, CraneAnimCycle, (arg0: Entity) => {
+        Isaac.Explode(arg0.Position, undefined, 10);
+      });
       break;
     case PsiPersuasionOutcome.NOTHING:
       SFXManager().Play(SoundEffect.COIN_SLOT, 1, 0, false, 1);
@@ -191,7 +194,7 @@ const ConfessionalAnimCycleWin: string[] = ["Initiate", "Wiggle"];
 const ConfessionalAnimCycle: string[] = ["Initiate", "Wiggle", "NoPrize"];
 
 export function PsiPersuasionConfessional(entity: Entity, outcome: PsiPersuasionOutcome): void {
-  if (entity.GetSprite().GetAnimation() === "Broken") {
+  if (entity.GetSprite().GetAnimation() !== "Idle") {
     return;
   }
 

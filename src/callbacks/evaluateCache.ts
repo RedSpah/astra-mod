@@ -4,7 +4,6 @@ import { AstraBStats, AstraStats } from "../enums/AstraStats";
 import { DanielBStats, DanielStats } from "../enums/DanielStats";
 import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { mod } from "../mod";
-import { Costumes } from "../enums/Costumes";
 
 export function evaluateCacheInit(): void {
   mod.AddCallback(ModCallback.EVALUATE_CACHE, evaluateCachePlayers);
@@ -96,11 +95,9 @@ function evaluateCacheAstraB(player: EntityPlayer, cacheFlag: CacheFlag) {
 }
 
 function evaluateCacheDaniel(player: EntityPlayer, cacheFlag: CacheFlag) {
-  //const shinySave = getOrDefault(saved.run.shiny, playerHash, ShinyData);
-  //  if (shinySave.Shiny) {
-  //player.GetSprite().ReplaceSpritesheet(0, Costumes.DANIEL_SHINY_SKIN_PATH);
- // player.GetSprite().LoadGraphics();
- //   }
+  // onst shinySave = getOrDefault(saved.run.shiny, playerHash, ShinyData); if (shinySave.Shiny) {
+  // layer.GetSprite().ReplaceSpritesheet(0, Costumes.DANIEL_SHINY_SKIN_PATH);
+  // player.GetSprite().LoadGraphics(); }
   switch (cacheFlag) {
     case CacheFlag.DAMAGE:
       player.Damage *= DanielStats.DAMAGE;

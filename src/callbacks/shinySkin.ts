@@ -1,5 +1,4 @@
-import { ModCallback, PlayerVariant } from "isaac-typescript-definitions";
-import { Costumes } from "../enums/Costumes";
+import { ModCallback, PlayerVariant, SkinColor } from "isaac-typescript-definitions";
 import { PlayerTypeCustom } from "../enums/PlayerTypeCustom";
 import { getOrDefault } from "../helpers";
 import { mod } from "../mod";
@@ -10,6 +9,7 @@ export class ShinyData {
 
 export class ShinyVolatileData {
   SkinUpdated = false;
+  SkinColor = SkinColor.PINK;
 }
 
 export const locals: Map<PtrHash, ShinyVolatileData> = new Map<PtrHash, ShinyVolatileData>();
@@ -32,6 +32,8 @@ function ShinySkin(player: EntityPlayer) {
     const shinySave = getOrDefault(saved.run.shiny, playerHash, ShinyData);
     if (shinySave.Shiny) {
       const shinyVolatile = getOrDefault(locals, playerHash, ShinyVolatileData);
+
+      /*
       if (!shinyVolatile.SkinUpdated) {
         switch (player.GetPlayerType()) {
           case PlayerTypeCustom.DANIEL:
@@ -49,12 +51,18 @@ function ShinySkin(player: EntityPlayer) {
             player.GetSprite().ReplaceSpritesheet(4, Costumes.DANIEL_B_SHINY_SKIN_PATH);
             player.GetSprite().ReplaceSpritesheet(12, Costumes.DANIEL_B_SHINY_SKIN_PATH);
             player.GetSprite().LoadGraphics();
+
+            // player.GetBodyColor()
+
+            // player.GetSprite().
             break;
           default:
             break;
         }
         shinyVolatile.SkinUpdated = true;
-      }
+
+
+      } */
     }
   }
 }

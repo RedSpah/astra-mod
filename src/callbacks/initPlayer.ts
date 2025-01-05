@@ -54,6 +54,8 @@ export function initAstraB(player: EntityPlayer): void {
     player.AddNullCostume(Costumes.ASTRA_B_BODY_SHINY);
     const fireworks = Isaac.Spawn(EntityType.EFFECT, EffectVariant.FIREWORKS, 0, player.Position, Vector(0, 0), player);
     fireworks.ToEffect()?.SetTimeout(100);
+  } else {
+    player.AddNullCostume(Costumes.ASTRA_B_SIDE_HAIR);
   }
 
   player.AddCollectible(CollectibleCustom.DOOM_DESIRE, 0, false);
@@ -67,16 +69,12 @@ export function initDaniel(player: EntityPlayer): void {
   if (shiny) {
     shinySave.Shiny = true;
     player.AddNullCostume(Costumes.DANIEL_EARS_SHINY);
-    player.AddNullCostume(Costumes.DANIEL_MANE_SHINY);
-    player.AddNullCostume(Costumes.DANIEL_HEAD_SHINY);
-    player.GetSprite().ReplaceSpritesheet(0, Costumes.DANIEL_SHINY_SKIN_PATH);
-    player.GetSprite().LoadGraphics();
     const fireworks = Isaac.Spawn(EntityType.EFFECT, EffectVariant.FIREWORKS, 0, player.Position, Vector(0, 0), player);
     fireworks.ToEffect()?.SetTimeout(100);
   } else {
     player.AddNullCostume(Costumes.DANIEL_EARS);
-    player.AddNullCostume(Costumes.DANIEL_MANE);
   }
+  player.AddNullCostume(Costumes.DANIEL_MANE);
 
   player.AddCollectible(CollectibleCustom.HYPNOS_PENDULUM, 0, false);
   player.AddCollectible(CollectibleCustom.PSIONIC_PERSUASION, 6, false);
@@ -89,16 +87,12 @@ export function initDanielB(player: EntityPlayer): void {
   if (shiny) {
     shinySave.Shiny = true;
     player.AddNullCostume(Costumes.DANIEL_B_EARS_SHINY);
-    player.AddNullCostume(Costumes.DANIEL_B_MANE_SHINY);
-    player.AddNullCostume(Costumes.DANIEL_B_HEAD_SHINY);
-    player.GetSprite().ReplaceSpritesheet(0, Costumes.DANIEL_B_SHINY_SKIN_PATH);
-    player.GetSprite().LoadGraphics();
     const fireworks = Isaac.Spawn(EntityType.EFFECT, EffectVariant.FIREWORKS, 0, player.Position, Vector(0, 0), player);
     fireworks.ToEffect()?.SetTimeout(100);
   } else {
     player.AddNullCostume(Costumes.DANIEL_B_EARS);
-    player.AddNullCostume(Costumes.DANIEL_B_MANE);
   }
+  player.AddNullCostume(Costumes.DANIEL_B_MANE);
 
   player.AddCollectible(CollectibleCustom.DREAM_EATER, 0, false);
   player.AddCollectible(CollectibleCustom.WISHMAKER_PENDANT, 2, false);

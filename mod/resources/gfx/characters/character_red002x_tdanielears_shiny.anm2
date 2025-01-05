@@ -1,8 +1,8 @@
 <AnimatedActor>
-	<Info CreatedBy="robot" CreatedOn="08/01/2023 16:06:53" Version="110" Fps="30"/>
+	<Info CreatedBy="robot" CreatedOn="05/01/2025 01:25:55" Version="111" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="costumes\costume_tdaniel_ears_shiny.png" Id="0"/>
+			<Spritesheet Path="costumes\character_red002x_tdanielears_blue.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="head2" Id="0" SpritesheetId="0"/>

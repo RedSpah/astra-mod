@@ -1,8 +1,7 @@
 export const Costumes = {
-  ASTRA_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrahairfull.anm2"),
   ASTRA_SIDE_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrasidehair.anm2"),
+  ASTRA_B_SIDE_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrasidehair.anm2"),
   ASTRA_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astraheadonelayer_shiny.anm2"),
-  ASTRA_B_HAIR: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrasidehair.anm2"),
   ASTRA_B_HAIR_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastraheadonelayer_shiny.anm2"),
   ASTRA_BODY_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001_astrabody_shiny.anm2"),
   ASTRA_B_BODY_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red001x_tastrabody_shiny.anm2"),
@@ -25,17 +24,11 @@ export const Costumes = {
 
   DANIEL_EARS: Isaac.GetCostumeIdByPath("gfx/characters/character_red002_danielears.anm2"),
   DANIEL_MANE: Isaac.GetCostumeIdByPath("gfx/characters/character_red002_danielmane.anm2"),
-
   DANIEL_EARS_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002_danielears_shiny.anm2"),
-  DANIEL_MANE_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002_danielmane_shiny.anm2"),
-  DANIEL_HEAD_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002_danielhead_shiny.anm2"),
 
   DANIEL_B_EARS: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielears.anm2"),
   DANIEL_B_MANE: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielmane.anm2"),
-
   DANIEL_B_EARS_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielears_shiny.anm2"),
-  DANIEL_B_MANE_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielmane_shiny.anm2"),
-  DANIEL_B_HEAD_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielhead_shiny.anm2"),
 
   DANIEL_B_EARS_SPIRIT: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielears_spirit.anm2"),
   DANIEL_B_MANE_SPIRIT: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielmane_spirit.anm2"),
@@ -43,10 +36,5 @@ export const Costumes = {
 
   DANIEL_B_EARS_SPIRIT_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielears_spirit_shiny.anm2"),
   DANIEL_B_MANE_SPIRIT_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielmane_spirit_shiny.anm2"),
-  DANIEL_B_HEAD_SPIRIT_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielhead_spirit_shiny.anm2"),
-
-  DANIEL_SHINY_SKIN_PATH: "gfx/characters/costumes/character_red002_daniel_shiny.png",
-  DANIEL_B_SHINY_SKIN_PATH: "gfx/characters/costumes/character_red002x_tdaniel_shiny.png",
-  DANIEL_B_SPIRIT_SKIN_PATH: "gfx/characters/costumes/character_red002x_tdaniel_spirit.png",
-  DANIEL_B_SPIRIT_SHINY_SKIN_PATH: "gfx/characters/costumes/character_red002x_tdaniel_spirit_shiny.png"
+  DANIEL_B_HEAD_SPIRIT_SHINY: Isaac.GetCostumeIdByPath("gfx/characters/character_red002x_tdanielhead_spirit_shiny.anm2")
 } as const;
